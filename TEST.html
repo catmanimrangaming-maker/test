@@ -1,0 +1,2468 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VCET Asia | Swiss Quality Precision Subcontracting</title>
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        vcet: {
+                            dark: '#002B5E',
+                            brand: '#005596',
+                            light: '#0085CA',
+                            ice: '#F0F4F8',
+                            slate: '#334155',
+                            silver: '#CBD5E1'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica Neue', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .brand-border { border-left: 4px solid #0085CA; }
+        .hero-building-bg {
+            background-image: url('Location(2).jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .dark-glass {
+            background: rgba(0, 43, 94, 0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 133, 202, 0.3);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+        .timeline-dot::before { content: ''; position: absolute; left: -25px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #0085CA; border: 2px solid white; box-shadow: 0 0 0 3px rgba(0, 133, 202, 0.2); }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #0085CA; border-radius: 4px; transition: background 0.2s ease; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #005596; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #F1F5F9; }
+        
+        /* Enhanced UI Polish & Smooth Transitions */
+        html { scroll-behavior: smooth; }
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .transition-all-smooth { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        input:focus, select:focus, textarea:focus { box-shadow: 0 0 0 3px rgba(0, 133, 202, 0.25); outline: none; }
+    </style>
+</head>
+<body class="bg-vcet-ice text-vcet-slate font-sans antialiased selection:bg-vcet-light selection:text-white custom-scrollbar">
+
+    <!-- TOP NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-vcet-dark text-white shadow-xl transition-all duration-300">
+        <!-- Utility Top Ribbon -->
+        <div class="border-b border-blue-900 bg-slate-950/80 px-4 py-1.5 text-xs">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-6">
+                    <span class="inline-flex items-center text-blue-200 font-semibold tracking-wide">
+                        <i class="fa-solid fa-award mr-1.5 text-vcet-light"></i> <span data-i18n="top_excellence">Celebrating 20 Years of Excellence (2004 - 2024)</span>
+                    </span>
+                    <span class="hidden md:inline-block text-blue-300">
+                        <i class="fa-solid fa-globe mr-1 text-vcet-light"></i> <span data-i18n="top_swiss">Swiss Quality Produced in Malaysia</span>
+                    </span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- Language Selector Dropdown -->
+                    <div class="relative">
+                        <button onclick="toggleLangDropdown(event)" class="flex items-center space-x-1 text-slate-300 hover:text-white bg-slate-900 px-2 py-1 rounded border border-slate-800 focus:outline-none transition-all-smooth">
+                            <i class="fa-solid fa-globe text-vcet-light"></i>
+                            <span id="currentLang">English</span>
+                            <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        </button>
+                        <div id="langMenu" class="absolute right-0 top-full mt-1 w-44 bg-slate-900 border border-slate-800 rounded shadow-xl hidden z-50">
+                            <a href="#" onclick="changeLanguage('en'); return false;" class="block px-3 py-2 hover:bg-vcet-light hover:text-white text-slate-300 text-xs transition-colors">English</a>
+                            <a href="#" onclick="changeLanguage('de'); return false;" class="block px-3 py-2 hover:bg-vcet-light hover:text-white text-slate-300 text-xs transition-colors">Deutsch (DE)</a>
+                            <a href="#" onclick="changeLanguage('fr'); return false;" class="block px-3 py-2 hover:bg-vcet-light hover:text-white text-slate-300 text-xs transition-colors">Français (FR)</a>
+                            <a href="#" onclick="changeLanguage('zh'); return false;" class="block px-3 py-2 hover:bg-vcet-light hover:text-white text-slate-300 text-xs transition-colors">Mandarin (中文)</a>
+                            <a href="#" onclick="changeLanguage('ms'); return false;" class="block px-3 py-2 hover:bg-vcet-light hover:text-white text-slate-300 text-xs transition-colors">Bahasa Melayu</a>
+                            <a href="#" onclick="changeLanguage('ta'); return false;" class="block px-3 py-2 hover:bg-vcet-light hover:text-white text-slate-300 text-xs transition-colors">Tamil (தமிழ்)</a>
+                        </div>
+                    </div>
+
+                    <!-- View Mode Switcher Button -->
+                    <button id="viewToggleBtn" onclick="toggleViewMode()" class="px-2.5 py-1 rounded bg-vcet-light/20 border border-vcet-light text-vcet-light hover:bg-vcet-light hover:text-white transition-all-smooth text-xs font-semibold flex items-center">
+                        <i class="fa-solid fa-sliders mr-1.5"></i>
+                        <span id="viewModeLabel" data-i18n="view_mode_deck">Switch to Presentation Deck</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Brand Nav -->
+        <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="#hero" class="flex items-center bg-white px-3 py-1.5 rounded-lg shadow-md transition-all-smooth hover:bg-slate-100" aria-label="VCET Asia Home">
+                    <img src="Logo.png" alt="VCET Asia" class="h-10 w-auto object-contain">
+                </a>
+            </div>
+
+            <div id="websiteNavLinks" class="hidden xl:flex items-center space-x-6 text-xs font-bold uppercase tracking-wider text-blue-100">
+                <a href="#about" class="hover:text-vcet-light transition-all-smooth" data-i18n="nav_about">About Us</a>
+                <a href="#history" class="hover:text-vcet-light transition-all-smooth" data-i18n="nav_history">History</a>
+                <a href="#facility-gallery" class="hover:text-vcet-light transition-all-smooth" data-i18n="nav_facility">Facility</a>
+                <a href="#process" class="hover:text-vcet-light transition-all-smooth" data-i18n="nav_workflow">Workflow</a>
+                <a href="#capabilities" class="hover:text-vcet-light transition-all-smooth" data-i18n="nav_machines">Machines</a>
+                <a href="#materials" class="hover:text-vcet-light transition-all-smooth" data-i18n="nav_materials">Materials & Tech</a>
+                <a href="#corporate" class="hover:text-vcet-light transition-all-smooth" data-i18n="nav_corporate">Corporate & ESG</a>
+            </div>
+
+            <div>
+                <button onclick="openRFQModal()" class="px-4 py-2 bg-vcet-light hover:bg-vcet-brand text-white font-bold text-sm uppercase tracking-wider rounded-sm shadow-md transition-all-smooth flex items-center hover:scale-[1.02]">
+                    <i class="fa-solid fa-paper-plane mr-2 text-xs"></i> <span data-i18n="btn_quote">Request Quote</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTAINER 1: LIVE WEBSITE PROTOTYPE -->
+    <div id="websiteView" class="block transition-opacity duration-500">
+        
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative text-white py-20 lg:py-28 overflow-hidden border-b-8 border-vcet-light hero-building-bg">
+            <div class="absolute inset-0 bg-slate-950/40"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/45 to-transparent"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-vcet-light/20 border border-vcet-light/40 px-3 py-1 rounded-full text-xs font-semibold text-blue-100 uppercase tracking-widest shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-vcet-light animate-ping"></span>
+                        <span data-i18n="hero_badge">Est. 2004 • Malacca, Malaysia</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-white drop-shadow-md">
+                        <span data-i18n="hero_title_1">ENGINEERED FOR</span> <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-vcet-light to-blue-200" data-i18n="hero_title_2">EUROPEAN PRECISION</span>
+                    </h1>
+                    <p class="text-blue-100 text-lg max-w-2xl font-light leading-relaxed drop-shadow" data-i18n="hero_desc">
+                        VCET Asia is your ONE STOP SOLUTION for high-precision mechanical parts, prototypes, unit parts, and series assemblies. We bridge Swiss engineering quality with the manufacturing scale of Southeast Asia.
+                    </p>
+
+                    <!-- Key Ticker Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-white/20">
+                        <div class="bg-slate-900/60 backdrop-blur-md p-3 rounded-lg border border-white/10 shadow-lg">
+                            <span class="block text-2xl font-extrabold text-vcet-light">600+</span>
+                            <span class="text-xs text-blue-200 font-medium" data-i18n="ticker_machines">Machine Capacity</span>
+                        </div>
+                        <div class="bg-slate-900/60 backdrop-blur-md p-3 rounded-lg border border-white/10 shadow-lg">
+                            <span class="block text-2xl font-extrabold text-vcet-light">38.0%</span>
+                            <span class="text-xs text-blue-200 font-medium" data-i18n="ticker_medtech">MedTech Focus</span>
+                        </div>
+                        <div class="bg-slate-900/60 backdrop-blur-md p-3 rounded-lg border border-white/10 shadow-lg">
+                            <span class="block text-2xl font-extrabold text-vcet-light">63.0%</span>
+                            <span class="text-xs text-blue-200 font-medium" data-i18n="ticker_swiss">Swiss Export</span>
+                        </div>
+                        <div class="bg-slate-900/60 backdrop-blur-md p-3 rounded-lg border border-white/10 shadow-lg">
+                            <span class="block text-2xl font-extrabold text-vcet-light">20+</span>
+                            <span class="text-xs text-blue-200 font-medium" data-i18n="ticker_partners">Partner Facilities</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#capabilities" class="px-6 py-3 bg-vcet-light hover:bg-white hover:text-vcet-dark text-white font-bold uppercase tracking-wider rounded-sm transition-all-smooth shadow-lg flex items-center hover:scale-[1.02]">
+                            <span data-i18n="btn_capacities">View Capacities</span> <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <a href="#history" class="px-6 py-3 bg-slate-900/60 backdrop-blur-md border border-white/30 hover:bg-blue-800 text-white font-bold uppercase tracking-wider rounded-sm transition-all-smooth flex items-center">
+                            <span data-i18n="btn_history_link">Our History</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side Visual Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative dark-glass rounded-2xl p-6 shadow-2xl border border-white/20">
+                        <div class="flex justify-between items-center pb-4 mb-4 border-b border-white/20">
+                            <div>
+                                <span class="text-xs text-vcet-light font-bold tracking-wider uppercase" data-i18n="scale_subtitle">Operational Scale</span>
+                                <h3 class="text-xl font-bold text-white uppercase tracking-wider" data-i18n="scale_title">Global Reach & Sectors</h3>
+                            </div>
+                            <i class="fa-solid fa-chart-pie text-3xl text-vcet-light opacity-80"></i>
+                        </div>
+
+                        <div class="space-y-4 text-sm text-blue-100">
+                            <div>
+                                <div class="flex justify-between text-sm mb-1"><span class="text-blue-100">MedTech</span><span class="font-bold text-white">38.0%</span></div>
+                                <div class="w-full bg-slate-900/50 h-2 rounded-full overflow-hidden"><div class="bg-vcet-light h-2 rounded-full transition-all duration-1000" style="width: 38%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1"><span class="text-blue-100">Watchmaking</span><span class="font-bold text-white">31.0%</span></div>
+                                <div class="w-full bg-slate-900/50 h-2 rounded-full overflow-hidden"><div class="bg-vcet-light h-2 rounded-full transition-all duration-1000" style="width: 31%"></div></div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 mt-4 pt-4 border-t border-white/20 text-xs">
+                                <div>
+                                    <p class="text-blue-200 uppercase" data-i18n="stat_ch">Swiss Export</p>
+                                    <p class="text-lg font-bold">63.0%</p>
+                                </div>
+                                <div>
+                                    <p class="text-blue-200 uppercase" data-i18n="stat_eu">Europe Export</p>
+                                    <p class="text-lg font-bold">26.9%</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-white/20 flex justify-between items-center text-xs text-blue-200">
+                            <span data-i18n="hq_label">Malacca Headquarters</span>
+                            <span class="text-vcet-light font-semibold" data-i18n="iso_label">ISO Audit Verified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-16 bg-white border-b border-vcet-silver">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-vcet-light text-sm font-bold uppercase tracking-widest" data-i18n="about_subtitle">About VCET Asia</span>
+                    <h2 class="text-3xl font-extrabold text-vcet-dark mt-2" data-i18n="about_title">Your One-Stop Solution for Mechanical Components</h2>
+                    <p class="text-slate-600 mt-3 text-base" data-i18n="about_desc">
+                        Established in 2004 in Malacca, VCET Asia bridges Swiss engineering expertise with high-capacity manufacturing ecosystems across Malaysia and Southeast Asia.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-vcet-ice p-8 rounded-xl border border-vcet-silver hover:border-vcet-light transition-all-smooth shadow-sm hover:shadow-md">
+                        <div class="w-12 h-12 rounded-lg bg-vcet-light text-white flex items-center justify-center text-xl mb-6 shadow">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-vcet-dark mb-2" data-i18n="about_card1_title">High Precision Machining</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed" data-i18n="about_card1_desc">
+                            Manufacturing prototype, single-unit, and mass-production high-precision mechanical parts with micron-level accuracy.
+                        </p>
+                    </div>
+
+                    <div class="bg-vcet-ice p-8 rounded-xl border border-vcet-silver hover:border-vcet-light transition-all-smooth shadow-sm hover:shadow-md">
+                        <div class="w-12 h-12 rounded-lg bg-vcet-dark text-white flex items-center justify-center text-xl mb-6 shadow">
+                            <i class="fa-solid fa-microscope"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-vcet-dark mb-2" data-i18n="about_card2_title">Swiss Quality Assurance</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed" data-i18n="about_card2_desc">
+                            Internal QA/QC labs equipped with vision (MMV) and 3D coordinate measuring machines (MMT) to meet demanding European criteria.
+                        </p>
+                    </div>
+
+                    <div class="bg-vcet-ice p-8 rounded-xl border border-vcet-silver hover:border-vcet-light transition-all-smooth shadow-sm hover:shadow-md">
+                        <div class="w-12 h-12 rounded-lg bg-vcet-brand text-white flex items-center justify-center text-xl mb-6 shadow">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-vcet-dark mb-2" data-i18n="about_card3_title">Network Capacity</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed" data-i18n="about_card3_desc">
+                            Over 20 audited partner manufacturing plants providing access to 600+ advanced CNC, EDM, and grinding machines.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPANY HISTORY & TIMELINE -->
+        <section id="history" class="py-20 bg-white border-b border-vcet-silver">
+            <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-1">
+                    <div class="brand-border pl-6 mb-6">
+                        <h2 class="text-3xl font-black text-vcet-dark uppercase" data-i18n="history_title">Our History</h2>
+                        <p class="text-vcet-brand font-medium mt-2" data-i18n="history_subtitle">Two decades of continuous growth and technological advancement.</p>
+                    </div>
+                    <div class="bg-vcet-ice p-6 rounded border border-vcet-silver mt-8 shadow-sm">
+                        <h4 class="font-bold text-vcet-dark mb-4 border-b border-vcet-silver pb-2" data-i18n="facility_infra">Facility Infrastructure</h4>
+                        <ul class="text-sm space-y-2 text-vcet-slate">
+                            <li><i class="fa-solid fa-check text-vcet-light mr-2"></i> <span data-i18n="facility_1">Modern Reception & Admin Offices</span></li>
+                            <li><i class="fa-solid fa-check text-vcet-light mr-2"></i> <span data-i18n="facility_2">Dedicated Conference Rooms</span></li>
+                            <li><i class="fa-solid fa-check text-vcet-light mr-2"></i> <span data-i18n="facility_3">Specialized QC & Assembly Rooms</span></li>
+                            <li><i class="fa-solid fa-check text-vcet-light mr-2"></i> <span data-i18n="facility_4">Optimized Logistics Zone</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 border-l-2 border-vcet-silver pl-8 relative">
+                    <div class="mb-8 relative timeline-dot">
+                        <h3 class="text-xl font-bold text-vcet-brand">2004 - 2010</h3>
+                        <p class="text-sm mt-1 text-slate-600" data-i18n="history_p1">Creation of the enterprise, establishment of the first VCET Asia office, setup of the Quality Control department, and commencement of mechanical subcontracting and assembly activities.</p>
+                    </div>
+                    <div class="mb-8 relative timeline-dot">
+                        <h3 class="text-xl font-bold text-vcet-brand">2011 - 2015</h3>
+                        <p class="text-sm mt-1 text-slate-600" data-i18n="history_p2">Setup of the Project Management team, QA/QC departments, Finance, and Logistics. Acquisition of the first MMV machine. Implementation of the first ERP system (March 1, 2014).</p>
+                    </div>
+                    <div class="mb-8 relative timeline-dot">
+                        <h3 class="text-xl font-bold text-vcet-brand">2016 - 2019</h3>
+                        <p class="text-sm mt-1 text-slate-600" data-i18n="history_p3">Upgrade of the ERP system to a modern cloud-based infrastructure for total operational integration.</p>
+                    </div>
+                    <div class="mb-8 relative timeline-dot">
+                        <h3 class="text-xl font-bold text-vcet-brand">2020 - 2024</h3>
+                        <p class="text-sm mt-1 text-slate-600" data-i18n="history_p4">Relocation to the new building. Expansion of QA capabilities with the purchase of advanced MMV and MMT (Coordinate Measuring) machines.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FACILITY PHOTO GALLERY SECTION -->
+        <section id="facility-gallery" class="py-20 bg-vcet-ice border-b border-vcet-silver">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-vcet-light text-sm font-bold uppercase tracking-widest" data-i18n="facility_subtitle">Our Facilities</span>
+                    <h2 class="text-3xl font-extrabold text-vcet-dark mt-2" data-i18n="facility_title">Inside VCET Asia Headquarters</h2>
+                    <p class="text-slate-600 mt-2 text-sm" data-i18n="facility_desc">
+                        Take a visual tour of our modern Malacca headquarters, project offices, QC and assembly labs, storage zones, and advanced measuring equipment.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Gallery Items -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-vcet-silver hover:shadow-xl transition-all-smooth">
+                        <img src="Lobby.png" alt="Modern Reception & Lobby" class="w-full h-52 object-cover hover:scale-105 transition-all-smooth duration-500">
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-vcet-light uppercase tracking-wider" data-i18n="fac_card1_tag">Reception & Admin</span>
+                            <h3 class="text-lg font-bold text-vcet-dark mt-1" data-i18n="fac_card1_title">Modern Reception Area</h3>
+                            <p class="text-xs text-slate-600 mt-2" data-i18n="fac_card1_desc">Welcoming client entrance with professional administrative quarters and brand display.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-vcet-silver hover:shadow-xl transition-all-smooth">
+                        <img src="Conference Room.png" alt="Dedicated Conference Rooms" class="w-full h-52 object-cover hover:scale-105 transition-all-smooth duration-500">
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-vcet-light uppercase tracking-wider" data-i18n="fac_card2_tag">Meetings & Strategy</span>
+                            <h3 class="text-lg font-bold text-vcet-dark mt-1" data-i18n="fac_card2_title">Executive Conference Room</h3>
+                            <p class="text-xs text-slate-600 mt-2" data-i18n="fac_card2_desc">Equipped for client reviews, project planning, and engineering collaborations.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-vcet-silver hover:shadow-xl transition-all-smooth">
+                        <img src="Project Office.png" alt="Project Office Workspace" class="w-full h-52 object-cover hover:scale-105 transition-all-smooth duration-500">
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-vcet-light uppercase tracking-wider" data-i18n="fac_card3_tag">Workspace</span>
+                            <h3 class="text-lg font-bold text-vcet-dark mt-1" data-i18n="fac_card3_title">Project Office Suite</h3>
+                            <p class="text-xs text-slate-600 mt-2" data-i18n="fac_card3_desc">Collaborative workspace for our engineering and project management teams.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-vcet-silver hover:shadow-xl transition-all-smooth">
+                        <img src="QC Office.png" alt="QC Office" class="w-full h-52 object-cover hover:scale-105 transition-all-smooth duration-500">
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-vcet-light uppercase tracking-wider" data-i18n="fac_card4_tag">Quality Control</span>
+                            <h3 class="text-lg font-bold text-vcet-dark mt-1" data-i18n="fac_card4_title">Quality Control Office</h3>
+                            <p class="text-xs text-slate-600 mt-2" data-i18n="fac_card4_desc">Dedicated office space for inspection planning, reporting, and documentation.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-vcet-silver hover:shadow-xl transition-all-smooth">
+                        <img src="QC & Assembly Room.png" alt="QC and Assembly Room" class="w-full h-52 object-cover hover:scale-105 transition-all-smooth duration-500">
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-vcet-light uppercase tracking-wider" data-i18n="fac_card5_tag">Inspection & CMM</span>
+                            <h3 class="text-lg font-bold text-vcet-dark mt-1" data-i18n="fac_card5_title">QC & CMM Measuring Lab</h3>
+                            <p class="text-xs text-slate-600 mt-2" data-i18n="fac_card5_desc">High-precision 3D coordinate measuring machines and spiral staircase layout.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-vcet-silver hover:shadow-xl transition-all-smooth">
+                        <img src="QC & Assembly Room(2).png" alt="QC & Assembly Workbench" class="w-full h-52 object-cover hover:scale-105 transition-all-smooth duration-500">
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-vcet-light uppercase tracking-wider" data-i18n="fac_card6_tag">Assembly & Benchwork</span>
+                            <h3 class="text-lg font-bold text-vcet-dark mt-1" data-i18n="fac_card6_title">Assembly & Testing Workbenches</h3>
+                            <p class="text-xs text-slate-600 mt-2" data-i18n="fac_card6_desc">Specialized workbenches equipped for precision mechanical assembly and verification.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-vcet-silver hover:shadow-xl transition-all-smooth">
+                        <img src="CMM.png" alt="CMM Machine Lab" class="w-full h-52 object-cover hover:scale-105 transition-all-smooth duration-500">
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-vcet-light uppercase tracking-wider" data-i18n="fac_card7_tag">Quality Assurance</span>
+                            <h3 class="text-lg font-bold text-vcet-dark mt-1" data-i18n="fac_card7_title">CMM 3D Measuring Lab</h3>
+                            <p class="text-xs text-slate-600 mt-2" data-i18n="fac_card7_desc">High-precision 3D coordinate measuring machines (Spectrum) for stringent Swiss quality checks.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-vcet-silver hover:shadow-xl transition-all-smooth">
+                        <img src="CNC VMM.png" alt="CNC Vision Measuring Machine" class="w-full h-52 object-cover hover:scale-105 transition-all-smooth duration-500">
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-vcet-light uppercase tracking-wider" data-i18n="fac_card8_tag">Inspection & Vision</span>
+                            <h3 class="text-lg font-bold text-vcet-dark mt-1" data-i18n="fac_card8_title">CNC VMM Inspection Suite</h3>
+                            <p class="text-xs text-slate-600 mt-2" data-i18n="fac_card8_desc">Advanced optical and vision measuring systems for micron-level component validation.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-vcet-silver hover:shadow-xl transition-all-smooth">
+                        <img src="Storage & Packaging.png" alt="Storage & Packaging Area" class="w-full h-52 object-cover hover:scale-105 transition-all-smooth duration-500">
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-vcet-light uppercase tracking-wider" data-i18n="fac_card9_tag">Packaging & Dispatch</span>
+                            <h3 class="text-lg font-bold text-vcet-dark mt-1" data-i18n="fac_card9_title">Storage & Packaging Zone</h3>
+                            <p class="text-xs text-slate-600 mt-2" data-i18n="fac_card9_desc">Organized racking and secure assembly packaging tables for global dispatch.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8-STEP PROCESS WORKFLOW -->
+        <section id="process" class="py-20 bg-vcet-ice">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-black text-vcet-dark uppercase" data-i18n="workflow_title">8-Step Operational Workflow</h2>
+                    <p class="text-vcet-slate mt-2 max-w-2xl mx-auto" data-i18n="workflow_subtitle">Fully integrated processes managed by our state-of-the-art Cloud ERP system.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 border-t-4 border-vcet-light shadow-md rounded hover:shadow-lg transition-all-smooth">
+                        <div class="text-vcet-light font-black text-2xl mb-2">01. RFQ</div>
+                        <h4 class="font-bold text-vcet-dark mb-2" data-i18n="step1_title">Client Request</h4>
+                        <p class="text-xs text-vcet-slate" data-i18n="step1_desc">Initial processing of the client's request for proposal.</p>
+                    </div>
+                    <div class="bg-white p-6 border-t-4 border-vcet-light shadow-md rounded hover:shadow-lg transition-all-smooth">
+                        <div class="text-vcet-light font-black text-2xl mb-2">02. Engineering</div>
+                        <h4 class="font-bold text-vcet-dark mb-2" data-i18n="step2_title">Project Managers</h4>
+                        <p class="text-xs text-vcet-slate" data-i18n="step2_desc">2D/3D drawing analysis, selection of appropriate partners, and advising on manufacturing optimization.</p>
+                    </div>
+                    <div class="bg-white p-6 border-t-4 border-vcet-light shadow-md rounded hover:shadow-lg transition-all-smooth">
+                        <div class="text-vcet-light font-black text-2xl mb-2">03. Quotation</div>
+                        <h4 class="font-bold text-vcet-dark mb-2" data-i18n="step3_title">Client Offer</h4>
+                        <p class="text-xs text-vcet-slate" data-i18n="step3_desc">Thorough price evaluation and formal offer submission.</p>
+                    </div>
+                    <div class="bg-white p-6 border-t-4 border-vcet-light shadow-md rounded hover:shadow-lg transition-all-smooth">
+                        <div class="text-vcet-light font-black text-2xl mb-2">04. Order</div>
+                        <h4 class="font-bold text-vcet-dark mb-2" data-i18n="step4_title">Planning</h4>
+                        <p class="text-xs text-vcet-slate" data-i18n="step4_desc">Documentation preparation, scheduling, and production tracking.</p>
+                    </div>
+                    <div class="bg-white p-6 border-t-4 border-vcet-brand shadow-md rounded hover:shadow-lg transition-all-smooth">
+                        <div class="text-vcet-brand font-black text-2xl mb-2">05. Incoming QC</div>
+                        <h4 class="font-bold text-vcet-dark mb-2" data-i18n="step5_title">Entry Control</h4>
+                        <p class="text-xs text-vcet-slate" data-i18n="step5_desc">Goods receipt and real-time inventory updates.</p>
+                    </div>
+                    <div class="bg-white p-6 border-t-4 border-vcet-brand shadow-md rounded hover:shadow-lg transition-all-smooth">
+                        <div class="text-vcet-brand font-black text-2xl mb-2">06. Quality Control</div>
+                        <h4 class="font-bold text-vcet-dark mb-2" data-i18n="step6_title">Inspection</h4>
+                        <p class="text-xs text-vcet-slate" data-i18n="step6_desc">Internal QC checks, custom jig design for inspection, and pre-assembly testing.</p>
+                    </div>
+                    <div class="bg-white p-6 border-t-4 border-vcet-brand shadow-md rounded hover:shadow-lg transition-all-smooth">
+                        <div class="text-vcet-brand font-black text-2xl mb-2">07. Assembly</div>
+                        <h4 class="font-bold text-vcet-dark mb-2" data-i18n="step7_title">Execution</h4>
+                        <p class="text-xs text-vcet-slate" data-i18n="step7_desc">Jig design for assembly operations and final functionality testing.</p>
+                    </div>
+                    <div class="bg-white p-6 border-t-4 border-vcet-brand shadow-md rounded hover:shadow-lg transition-all-smooth">
+                        <div class="text-vcet-brand font-black text-2xl mb-2">08. Logistics</div>
+                        <h4 class="font-bold text-vcet-dark mb-2" data-i18n="step8_title">Shipping</h4>
+                        <p class="text-xs text-vcet-slate" data-i18n="step8_desc">Appropriate packaging to protect goods, fully EPTA certified for transport optimization.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MACHINERY FLEET & CAPACITIES MATRIX -->
+        <section id="capabilities" class="py-20 bg-vcet-dark text-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+                    <div>
+                        <span class="text-vcet-light text-sm font-bold uppercase tracking-widest" data-i18n="cap_subtitle">Manufacturing Infrastructure</span>
+                        <h2 class="text-3xl font-extrabold text-white mt-1" data-i18n="cap_title">Advanced Machinery Capacities</h2>
+                    </div>
+                    <p class="text-blue-200 text-sm max-w-md mt-4 md:mt-0" data-i18n="cap_desc">
+                        A network of over 20 partners providing access to over 600 advanced machines.
+                    </p>
+                </div>
+
+                <!-- Filter Pills -->
+                <div class="flex flex-wrap gap-2 mb-8 border-b border-blue-900 pb-4">
+                    <button onclick="filterFleet('all')" class="fleet-btn px-4 py-2 rounded-lg text-sm font-medium bg-vcet-light text-white transition-all-smooth"><span data-i18n="filter_all">All Categories</span> (624)</button>
+                    <button onclick="filterFleet('milling')" class="fleet-btn px-4 py-2 rounded-lg text-sm font-medium bg-blue-900/50 text-blue-200 hover:bg-blue-800 transition-all-smooth"><span data-i18n="filter_milling">CNC Milling</span> (222)</button>
+                    <button onclick="filterFleet('grinding')" class="fleet-btn px-4 py-2 rounded-lg text-sm font-medium bg-blue-900/50 text-blue-200 hover:bg-blue-800 transition-all-smooth"><span data-i18n="filter_grinding">CNC Grinding</span> (161)</button>
+                    <button onclick="filterFleet('turning')" class="fleet-btn px-4 py-2 rounded-lg text-sm font-medium bg-blue-900/50 text-blue-200 hover:bg-blue-800 transition-all-smooth"><span data-i18n="filter_turning">CNC Turning</span> (126)</button>
+                    <button onclick="filterFleet('wirecut')" class="fleet-btn px-4 py-2 rounded-lg text-sm font-medium bg-blue-900/50 text-blue-200 hover:bg-blue-800 transition-all-smooth"><span data-i18n="filter_wirecut">Wire Cut</span> (60)</button>
+                    <button onclick="filterFleet('edm')" class="fleet-btn px-4 py-2 rounded-lg text-sm font-medium bg-blue-900/50 text-blue-200 hover:bg-blue-800 transition-all-smooth"><span data-i18n="filter_edm">Sink EDM</span> (55)</button>
+                </div>
+
+                <!-- Fleet Grid Cards -->
+                <div id="fleetContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Dynamic rendering -->
+                </div>
+            </div>
+        </section>
+
+        <!-- MATERIALS & SURFACE TREATMENTS DIRECTORY -->
+        <section id="materials" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-vcet-light text-sm font-bold uppercase tracking-widest" data-i18n="mat_subtitle">Technical Expertise</span>
+                    <h2 class="text-3xl font-extrabold text-vcet-dark mt-2" data-i18n="mat_title">Comprehensive Raw Materials & Treatments</h2>
+                    <p class="text-slate-600 mt-2 text-sm" data-i18n="mat_desc">
+                        Mastering the complete directory of raw materials and specialized finishing treatments for extreme medical, aerospace, and horological precision.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-10">
+                    <!-- Materials Box -->
+                    <div class="bg-vcet-ice p-8 rounded-2xl shadow-sm border border-vcet-silver hover:shadow-md transition-all-smooth">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-10 h-10 rounded-lg bg-vcet-light/10 text-vcet-light flex items-center justify-center text-lg font-bold">
+                                <i class="fa-solid fa-cube"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-vcet-dark" data-i18n="mat_box_title">Raw Materials Directory</h3>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs sm:text-sm">
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>Aluminium</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>Stainless Steel</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>Tool Steel</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>Mild Steel</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>Delrin</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>Peek</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>POM</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>Brass</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>Carbide</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>Copper</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>Bronze</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>Nylon</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>Polyurethane (PU)</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>Silver Steel</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>Teflon</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>Bearing Steel</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>Titanium Grade 5</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>PET-P</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>Cast Iron Gg 25</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-light transition-all-smooth"><i class="fa-solid fa-check text-vcet-light mr-2 text-xs"></i>Cast Nylon</div>
+                        </div>
+                    </div>
+
+                    <!-- Treatments Box -->
+                    <div class="bg-vcet-ice p-8 rounded-2xl shadow-sm border border-vcet-silver hover:shadow-md transition-all-smooth">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-10 h-10 rounded-lg bg-vcet-brand/10 text-vcet-brand flex items-center justify-center text-lg font-bold">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-vcet-dark" data-i18n="treat_box_title">Surface Treatments & Coatings</h3>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs sm:text-sm">
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>Hardening</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>Electropolishing (EP)</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>Hard Chrome</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>Alodine 1200S</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>AlTiN Coating</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>Anodizing (Natural/Colour)</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>Bead Blasting</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>Sand Blasting</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>Balinit A (TiN)</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>Balinit B (TiCN)</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>Balinit D (CrN)</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>Blackening</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>Black Zinc</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>Black Chrome</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>Zinc Coating</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>DLC Coating</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>Nitriding</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>Passivation</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>Painting</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 font-medium text-slate-800 hover:border-vcet-brand transition-all-smooth"><i class="fa-solid fa-layer-group text-vcet-light mr-2 text-xs"></i>Tenifer Black</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INDUSTRY DISTRIBUTION & GLOBAL EXPORT -->
+        <section id="industries" class="py-20 bg-vcet-ice border-y border-vcet-silver">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Industry Breakdown Chart -->
+                    <div class="bg-white p-8 rounded-2xl border border-vcet-silver shadow-sm">
+                        <div class="mb-6">
+                            <span class="text-vcet-light text-xs font-bold uppercase tracking-widest" data-i18n="rev_subtitle">Revenue Breakdown</span>
+                            <h3 class="text-2xl font-bold text-vcet-dark mt-1" data-i18n="rev_title">Sectors Served</h3>
+                            <p class="text-slate-500 text-xs" data-i18n="rev_desc">Driven by high-demand MedTech and Luxury Horology sectors.</p>
+                        </div>
+                        <div class="relative h-64 sm:h-80 flex justify-center items-center">
+                            <canvas id="sectorChart"></canvas>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mt-6 pt-4 border-t border-slate-200 text-xs font-medium">
+                            <div class="flex items-center"><span class="w-3 h-3 rounded-full bg-[#0085CA] mr-2"></span> MedTech (38%)</div>
+                            <div class="flex items-center"><span class="w-3 h-3 rounded-full bg-[#002B5E] mr-2"></span> Watch Industry (31%)</div>
+                            <div class="flex items-center"><span class="w-3 h-3 rounded-full bg-[#3B82F6] mr-2"></span> Automation (13%)</div>
+                            <div class="flex items-center"><span class="w-3 h-3 rounded-full bg-[#F59E0B] mr-2"></span> Automotive (12%)</div>
+                            <div class="flex items-center"><span class="w-3 h-3 rounded-full bg-[#10B981] mr-2"></span> Electronic/Connector (4%)</div>
+                            <div class="flex items-center"><span class="w-3 h-3 rounded-full bg-[#6366F1] mr-2"></span> Aerospace (2%)</div>
+                        </div>
+                    </div>
+
+                    <!-- Global Export Footprint -->
+                    <div id="global" class="space-y-6">
+                        <div>
+                            <span class="text-vcet-light text-xs font-bold uppercase tracking-widest" data-i18n="global_subtitle">Global Reach</span>
+                            <h3 class="text-3xl font-extrabold text-vcet-dark mt-1" data-i18n="global_title">International Market Footprint</h3>
+                            <p class="text-slate-600 text-sm mt-2 leading-relaxed" data-i18n="global_desc">
+                                Over 99% of our manufactured precision components are exported directly to European precision hubs, led by Switzerland and Western Europe.
+                            </p>
+                        </div>
+
+                        <!-- Progress Bars -->
+                        <div class="space-y-4 pt-2">
+                            <div>
+                                <div class="flex justify-between text-sm font-bold text-vcet-dark mb-1">
+                                    <span><i class="fa-solid fa-location-dot text-red-600 mr-2"></i>Switzerland (63.0%)</span>
+                                    <span class="text-vcet-light">63.0%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+                                    <div class="bg-vcet-dark h-full rounded-full transition-all duration-1000" style="width: 63.0%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-sm font-bold text-vcet-dark mb-1">
+                                    <span><i class="fa-solid fa-location-dot text-red-500 mr-2"></i>Europe (Rest of EU)</span>
+                                    <span class="text-vcet-light">26.9%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+                                    <div class="bg-vcet-light h-full rounded-full transition-all duration-1000" style="width: 26.9%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-sm font-bold text-vcet-dark mb-1">
+                                    <span><i class="fa-solid fa-location-dot text-blue-600 mr-2"></i>United States (USA)</span>
+                                    <span class="text-vcet-light">10.0%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+                                    <div class="bg-blue-600 h-full rounded-full transition-all duration-1000" style="width: 10.0%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-sm font-bold text-vcet-dark mb-1">
+                                    <span><i class="fa-solid fa-location-dot text-amber-500 mr-2"></i>Asia</span>
+                                    <span class="text-vcet-light">0.1%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+                                    <div class="bg-amber-500 h-full rounded-full transition-all duration-1000" style="width: 0.1%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Logistics Badge -->
+                        <div class="p-4 bg-white border border-vcet-silver rounded-xl flex items-center space-x-4 shadow-sm">
+                            <i class="fa-solid fa-plane-departure text-2xl text-vcet-light"></i>
+                            <div>
+                                <h4 class="font-bold text-vcet-dark text-sm" data-i18n="logistics_title">EPTA Certified Logistics</h4>
+                                <p class="text-xs text-slate-600" data-i18n="logistics_desc">Optimized air freight routes guaranteeing secure and rapid door-to-door transit to Europe and US.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CORPORATE, DEMOGRAPHICS & ESG -->
+        <section id="corporate" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-black text-vcet-dark uppercase" data-i18n="corp_title">Corporate Structure & Ethics</h2>
+                    <p class="text-vcet-slate mt-2" data-i18n="corp_subtitle">Committed to sustainability, community, and an inclusive workforce.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Leadership & University Partner Image Logos -->
+                    <div class="bg-vcet-ice p-6 rounded shadow-sm border border-vcet-silver">
+                        <h3 class="text-lg font-bold text-vcet-brand border-b border-vcet-silver pb-2 mb-4" data-i18n="dir_title">Direction</h3>
+                        <ul class="text-sm space-y-3 mb-6">
+                            <li><strong data-i18n="exec_ceocfo">CEO / CFO</strong>: Regis Degen</li>
+                            <li><strong data-i18n="exec_coocto">COO / CTO</strong>: Cedric Bourquenez</li>
+                            <li><strong data-i18n="exec_gm">General Manager</strong>: Wan Muhammad Yusuf / Wan Mohd Zani</li>
+                            <li><strong data-i18n="exec_team">Management Team</strong>: Michelle (Finance), Cindy (HR), Norashidah (Admin), Ahmad Tarmizi (QA/QC), Rahim Hasim (Logistics).</li>
+                        </ul>
+                        
+                        <h3 class="text-lg font-bold text-vcet-brand border-b border-vcet-silver pb-2 mb-4" data-i18n="uni_partners_title">University Partnerships</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 items-center">
+                            <div class="p-2.5 bg-white rounded-lg border border-slate-200 flex items-center justify-center h-16 shadow-sm hover:border-vcet-light transition-all-smooth">
+                                <img src="UTEM.png" alt="UTeM Logo" class="max-h-11 w-auto object-contain">
+                            </div>
+                            <div class="p-2.5 bg-white rounded-lg border border-slate-200 flex items-center justify-center h-16 shadow-sm hover:border-vcet-light transition-all-smooth">
+                                <img src="UTM.png" alt="UTM Logo" class="max-h-11 w-auto object-contain">
+                            </div>
+                            <div class="p-2.5 bg-white rounded-lg border border-slate-200 flex items-center justify-center h-16 shadow-sm hover:border-vcet-light transition-all-smooth">
+                                <img src="UTHM.png" alt="UTHM Logo" class="max-h-11 w-auto object-contain">
+                            </div>
+                            <div class="p-2.5 bg-white rounded-lg border border-slate-200 flex items-center justify-center h-16 shadow-sm hover:border-vcet-light transition-all-smooth">
+                                <img src="MMU.png" alt="MMU Logo" class="max-h-11 w-auto object-contain">
+                            </div>
+                            <div class="p-2.5 bg-white rounded-lg border border-slate-200 flex items-center justify-center h-16 shadow-sm hover:border-vcet-light transition-all-smooth col-span-2 sm:col-span-2 lg:col-span-2">
+                                <img src="Nottingham.png" alt="University of Nottingham Logo" class="max-h-11 w-auto object-contain">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Workforce Demographics -->
+                    <div class="bg-vcet-ice p-6 rounded shadow-sm border border-vcet-silver">
+                        <h3 class="text-lg font-bold text-vcet-brand border-b border-vcet-silver pb-2 mb-4" data-i18n="demog_title">Workforce Demographics</h3>
+                        <div class="flex justify-around items-center mb-8 bg-white p-4 rounded border border-slate-200">
+                            <div class="text-center">
+                                <i class="fa-solid fa-person text-3xl text-vcet-light mb-2"></i>
+                                <div class="text-2xl font-black text-vcet-dark">59%</div>
+                                <div class="text-xs uppercase font-bold text-vcet-slate" data-i18n="men_label">Male</div>
+                            </div>
+                            <div class="text-center">
+                                <i class="fa-solid fa-person-dress text-3xl text-pink-500 mb-2"></i>
+                                <div class="text-2xl font-black text-vcet-dark">41%</div>
+                                <div class="text-xs uppercase font-bold text-vcet-slate" data-i18n="women_label">Female</div>
+                            </div>
+                        </div>
+                        <div class="space-y-4 text-xs font-semibold">
+                            <div>
+                                <div class="flex justify-between mb-1"><span>Malay (50.0%)</span><span>50.0%</span></div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden"><div class="bg-vcet-dark h-2 rounded-full" style="width: 50.0%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1"><span>Chinese (21.4%)</span><span>21.4%</span></div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden"><div class="bg-vcet-brand h-2 rounded-full" style="width: 21.4%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1"><span>Indian (17.9%)</span><span>17.9%</span></div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden"><div class="bg-vcet-light h-2 rounded-full" style="width: 17.9%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1"><span>Others (10.7%)</span><span>10.7%</span></div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden"><div class="bg-slate-400 h-2 rounded-full" style="width: 10.7%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ESG & Why VCET -->
+                    <div id="esg" class="bg-vcet-ice p-6 rounded shadow-sm border border-vcet-silver flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-vcet-brand border-b border-vcet-silver pb-2 mb-4" data-i18n="esg_title">Why VCET? (ESG & Value)</h3>
+                            <ul class="text-sm space-y-3">
+                                <li><i class="fa-solid fa-leaf text-green-600 w-5"></i> <strong data-i18n="esg_sus_title">Sustainability</strong>: <span data-i18n="esg_sus_desc">Carbon footprint measurement, annual reporting, and ecological packaging materials.</span></li>
+                                <li><i class="fa-solid fa-hands-holding-child text-vcet-light w-5"></i> <strong data-i18n="esg_com_title">Community</strong>: <span data-i18n="esg_com_desc">Active engagement in charity projects and professional training programs.</span></li>
+                                <li><i class="fa-solid fa-magnifying-glass-chart text-vcet-light w-5"></i> <strong data-i18n="esg_qua_title">Quality</strong>: <span data-i18n="esg_qua_desc">ISO certified audits, material/treatment certificates, and internal assembly testing.</span></li>
+                                <li><i class="fa-solid fa-coins text-vcet-light w-5"></i> <strong data-i18n="esg_cost_title">Cost-Efficiency</strong>: <span data-i18n="esg_cost_desc">Highly competitive pricing with EPTA certified transport logistics.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER (Structured with General, Sales, and HR in 3 Side-by-Side Vertical Columns with Icons and Clean Phone Lines) -->
+        <footer class="bg-vcet-dark text-blue-200 py-12 border-t-4 border-vcet-light text-sm">
+            <div class="max-w-7xl mx-auto px-4 space-y-10">
+                
+                <!-- Top Footer Grid: Company Info & Headquarters -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pb-8 border-b border-blue-900/60">
+                    <div>
+                        <div class="text-2xl font-black tracking-tighter text-white mb-3">
+                            VC<span class="text-vcet-light">E</span>T <span class="text-sm font-normal tracking-widest uppercase text-vcet-brand ml-1">Asia Sdn Bhd</span>
+                        </div>
+                        <p class="text-sm leading-relaxed" data-i18n="footer_desc">Your ONE STOP SOLUTION. Connecting Swiss precision engineering with highly efficient Malaysian manufacturing capacities.</p>
+                        <p class="text-xs mt-3 text-vcet-brand" data-i18n="footer_copyright">© 2004 - 2026 VCET ASIA SDN BHD. All rights reserved.</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-bold uppercase tracking-wider mb-3 border-b border-vcet-brand pb-2 text-sm" data-i18n="footer_hq">Headquarters</h4>
+                        <address class="not-italic text-sm space-y-1">
+                            <p>No 6 & 8, Jalan Tasik Utama 63</p>
+                            <p>Kawasan Perindustrian Taman Tasik Utama</p>
+                            <p>75450 Ayer Keroh, Malacca</p>
+                            <p>Malaysia</p>
+                        </address>
+                    </div>
+                </div>
+
+                <!-- Bottom Footer Section: Direct Lines with Icons and Clean Numbers -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-4 border-b border-vcet-brand pb-2 text-sm" data-i18n="footer_lines">Direct Lines</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        
+                        <!-- Column 1: General -->
+                        <div class="bg-slate-900/40 p-4 rounded-lg border border-blue-900/50 flex flex-col space-y-3">
+                            <span class="bg-vcet-brand text-white text-[10px] font-bold px-3 py-1.5 rounded-sm text-center w-full uppercase">GENERAL</span>
+                            <a href="mailto:info@vcetasia.com" class="hover:text-white transition-all-smooth text-xs text-center py-1 flex items-center justify-center">
+                                <i class="fa-solid fa-envelope mr-2 text-vcet-light"></i>info@vcetasia.com
+                            </a>
+                        </div>
+
+                        <!-- Column 2: Sales -->
+                        <div class="bg-slate-900/40 p-4 rounded-lg border border-blue-900/50 flex flex-col space-y-3">
+                            <div>
+                                <span class="bg-vcet-brand text-white text-[10px] font-bold px-3 py-1.5 rounded-sm text-center block w-full uppercase mb-2">SALES</span>
+                                <a href="mailto:sales@vcetasia.com" class="hover:text-white transition-all-smooth text-xs text-center block py-0.5 flex items-center justify-center">
+                                    <i class="fa-solid fa-envelope mr-2 text-vcet-light"></i>sales@vcetasia.com
+                                </a>
+                            </div>
+                            <div class="pt-3 border-t border-blue-900/40 text-center">
+                                <a href="tel:+6062530592" class="hover:text-white transition-all-smooth text-xs inline-flex items-center justify-center py-1 font-semibold text-blue-100">
+                                    <i class="fa-solid fa-phone mr-2 text-vcet-light"></i>+60 6 2530592
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Column 3: HR Email & HR Tel -->
+                        <div class="bg-slate-900/40 p-4 rounded-lg border border-blue-900/50 flex flex-col space-y-3">
+                            <div>
+                                <span class="bg-vcet-brand text-white text-[10px] font-bold px-3 py-1.5 rounded-sm text-center block w-full uppercase mb-2">HR EMAIL</span>
+                                <a href="mailto:hr@vcetasia.com" class="hover:text-white transition-all-smooth text-xs text-center block py-0.5 flex items-center justify-center">
+                                    <i class="fa-solid fa-envelope mr-2 text-vcet-light"></i>hr@vcetasia.com
+                                </a>
+                            </div>
+                            <div class="pt-3 border-t border-blue-900/40 text-center">
+                                <a href="tel:+60145250433" class="hover:text-white transition-all-smooth text-xs inline-flex items-center justify-center py-1 font-semibold text-blue-100">
+                                    <i class="fa-solid fa-phone mr-2 text-vcet-light"></i>+60 14 525 0433
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+    <!-- CONTAINER 2: EXECUTIVE PRESENTATION SLIDE DECK MODE -->
+    <div id="presentationView" class="hidden min-h-screen bg-slate-950 text-white flex flex-col justify-between p-6">
+        
+        <!-- Slide Header -->
+        <div class="flex justify-between items-center border-b border-slate-800 pb-4">
+            <div class="flex items-center space-x-3">
+                <span class="px-2.5 py-1 bg-vcet-light text-white text-xs font-bold rounded">SLIDE PRESENTATION</span>
+                <span id="slideIndicator" class="text-xs font-semibold text-slate-400">Slide 1 of 7</span>
+            </div>
+            <div class="text-right">
+                <span class="text-xs text-vcet-light font-bold tracking-widest uppercase">VCET Asia Corporate Deck</span>
+                <p class="text-[10px] text-slate-400">Aligned to VCET Corporate Visual Identity</p>
+            </div>
+        </div>
+
+        <!-- Slide Canvas Area -->
+        <div class="my-auto max-w-5xl mx-auto w-full py-8">
+            
+            <!-- SLIDE 1: COVER -->
+            <div id="slide1" class="slide-content space-y-6 text-center">
+                <div class="inline-block px-4 py-1 bg-vcet-light/20 border border-vcet-light rounded-full text-vcet-light text-xs font-bold tracking-widest uppercase">
+                    Executive Strategy Pitch
+                </div>
+                <h1 class="text-4xl sm:text-5xl font-black text-white leading-tight">
+                    Next-Generation Web Portal Design<br>
+                    <span class="text-vcet-light">For VCET Asia Sdn. Bhd.</span>
+                </h1>
+                <p class="text-slate-300 max-w-2xl mx-auto text-base font-light">
+                    Transforming VCET Asia's digital identity to reflect Swiss precision engineering, Malaysian manufacturing scale, and international market leadership.
+                </p>
+            </div>
+
+            <!-- SLIDE 2: BRAND MANUAL -->
+            <div id="slide2" class="slide-content hidden space-y-6">
+                <div>
+                    <span class="text-vcet-light text-xs font-bold uppercase tracking-widest">BRAND MANUAL</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-1">VCET Visual Identity Integration</h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 space-y-4">
+                        <div class="h-16 rounded-lg bg-[#0085CA] flex items-center justify-center font-mono font-bold text-white text-lg">#0085CA</div>
+                        <h3 class="font-bold text-white text-lg">Azure Light Blue</h3>
+                        <p class="text-xs text-slate-400">Symbolizing precision engineering, innovation, and modern dynamic energy.</p>
+                    </div>
+
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 space-y-4">
+                        <div class="h-16 rounded-lg bg-[#002B5E] border border-slate-700 flex items-center justify-center font-mono font-bold text-white text-lg">#002B5E</div>
+                        <h3 class="font-bold text-white text-lg">Deep Corporate Navy</h3>
+                        <p class="text-xs text-slate-400">Provides high contrast, executive gravity, and a B2B professional finish.</p>
+                    </div>
+
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 space-y-4">
+                        <div class="h-16 rounded-lg bg-[#F0F4F8] flex items-center justify-center font-mono font-bold text-slate-900 text-lg">#F0F4F8</div>
+                        <h3 class="font-bold text-white text-lg">Ice Slate Background</h3>
+                        <p class="text-xs text-slate-400">Ensures clean legibility for technical machine specifications and CAD tables.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 3: DESIGN SYSTEM -->
+            <div id="slide3" class="slide-content hidden space-y-6">
+                <div>
+                    <span class="text-vcet-light text-xs font-bold uppercase tracking-widest">Brand Manual & UI Enhancements</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-1">Logo Contrast, Hero & Facility Galleries</h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 space-y-3">
+                        <i class="fa-solid fa-shield-halved text-2xl text-vcet-light"></i>
+                        <h3 class="font-bold text-white">Logo Visibility Fix</h3>
+                        <p class="text-xs text-slate-400">Added a clean white contrast card container behind the logo in the header so the artwork is fully legible against dark headers.</p>
+                    </div>
+
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 space-y-3">
+                        <i class="fa-solid fa-image text-2xl text-vcet-light"></i>
+                        <h3 class="font-bold text-white">Transparent Hero Integration</h3>
+                        <p class="text-xs text-slate-400">Removed heavy solid fills in favor of translucent overlays, ensuring the factory background image remains vibrant.</p>
+                    </div>
+
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 space-y-3">
+                        <i class="fa-solid fa-building text-2xl text-vcet-light"></i>
+                        <h3 class="font-bold text-white">Expanded Facility Gallery</h3>
+                        <p class="text-xs text-slate-400">Integrated Project Offices, QC & CMM Labs, Workbenches, and Storage & Packaging zones directly into the facility showcase.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 4: UX & INFORMATION ARCHITECTURE -->
+            <div id="slide4" class="slide-content hidden space-y-6">
+                <div>
+                    <span class="text-vcet-light text-xs font-bold uppercase tracking-widest">User Experience Architecture</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-1">Information Architecture & Navigation</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 text-sm">
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 space-y-3">
+                        <h3 class="text-lg font-bold text-vcet-light"><i class="fa-solid fa-sitemap mr-2"></i>Interactive Features</h3>
+                        <ul class="space-y-2 text-slate-300 text-xs">
+                            <li><i class="fa-solid fa-check text-vcet-light mr-2"></i> <strong>Machine Capacity Filter:</strong> Instant sorting across 624+ machines.</li>
+                            <li><i class="fa-solid fa-check text-vcet-light mr-2"></i> <strong>Material & Coating Directory:</strong> Full specs for all 20+ materials & treatments.</li>
+                            <li><i class="fa-solid fa-check text-vcet-light mr-2"></i> <strong>Live Sector Revenue Charts:</strong> Direct visual proof of MedTech and Horology sectors.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 space-y-3">
+                        <h3 class="text-lg font-bold text-vcet-light"><i class="fa-solid fa-globe mr-2"></i>Global Audience Conversion</h3>
+                        <ul class="space-y-2 text-slate-300 text-xs">
+                            <li><i class="fa-solid fa-check text-vcet-light mr-2"></i> <strong>Multi-language Support:</strong> German, French, English, Mandarin, Malay, Tamil.</li>
+                            <li><i class="fa-solid fa-check text-vcet-light mr-2"></i> <strong>File Upload RFQ Portal:</strong> Direct connection for 2D/3D CAD drawing submissions.</li>
+                            <li><i class="fa-solid fa-check text-vcet-light mr-2"></i> <strong>Cloud ERP Visibility:</strong> Building trust with European procurement leads.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 5: TECHNICAL CAPACITY -->
+            <div id="slide5" class="slide-content hidden space-y-6">
+                <div>
+                    <span class="text-vcet-light text-xs font-bold uppercase tracking-widest">Capacity Showcase</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-1">Highlighting 600+ Machine Network</h2>
+                </div>
+
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 grid md:grid-cols-3 gap-6 text-center">
+                    <div class="border-r border-slate-800 pr-4">
+                        <span class="text-4xl font-black text-vcet-light">222</span>
+                        <p class="font-bold text-white text-sm mt-1">CNC Milling Machines</p>
+                        <p class="text-xs text-slate-400 mt-1">3-Axis, 4-Axis, 5-Axis Precision Centers</p>
+                    </div>
+
+                    <div class="border-r border-slate-800 pr-4">
+                        <span class="text-4xl font-black text-vcet-light">161</span>
+                        <p class="font-bold text-white text-sm mt-1">CNC Grinding Machines</p>
+                        <p class="text-xs text-slate-400 mt-1">Cylindrical 7-Axis, Honing, Jig, Surface</p>
+                    </div>
+
+                    <div>
+                        <span class="text-4xl font-black text-vcet-light">115</span>
+                        <p class="font-bold text-white text-sm mt-1">EDM & Wire Cut</p>
+                        <p class="text-xs text-slate-400 mt-1">Wire EDM & Super Drill Technology</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 6: SUSTAINABILITY & ESG -->
+            <div id="slide6" class="slide-content hidden space-y-6">
+                <div>
+                    <span class="text-vcet-light text-xs font-bold uppercase tracking-widest">ESG Commitment</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-1">Integrating Carbon Footprint Reporting</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 space-y-3">
+                        <i class="fa-solid fa-leaf text-2xl text-vcet-light"></i>
+                        <h3 class="font-bold text-white">Carbon Tracking Dashboard</h3>
+                        <p class="text-xs text-slate-400">Providing annual CO2 emission metrics directly to Swiss and European customers to assist their Scope 3 compliance.</p>
+                    </div>
+
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 space-y-3">
+                        <i class="fa-solid fa-handshake-angle text-2xl text-vcet-light"></i>
+                        <h3 class="font-bold text-white">Local Ecosystem Growth</h3>
+                        <p class="text-xs text-slate-400">Direct partnerships with Malaysian universities (UTeM, UTM, UTHM, MMU, Nottingham) to build next-generation talent.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 7: DEPLOYMENT ROADMAP -->
+            <div id="slide7" class="slide-content hidden space-y-6 text-center">
+                <span class="text-vcet-light text-xs font-bold uppercase tracking-widest">Execution Plan</span>
+                <h2 class="text-3xl font-extrabold text-white">Deployment Timeline</h2>
+
+                <div class="grid grid-cols-4 gap-4 pt-4 text-xs">
+                    <div class="bg-slate-900 p-4 rounded-lg border border-slate-800">
+                        <span class="text-vcet-light font-bold">Phase 1</span>
+                        <p class="font-bold text-white mt-1">UX/UI Prototype</p>
+                        <p class="text-slate-400 mt-1">Completed</p>
+                    </div>
+
+                    <div class="bg-slate-900 p-4 rounded-lg border border-slate-800">
+                        <span class="text-vcet-light font-bold">Phase 2</span>
+                        <p class="font-bold text-white mt-1">ERP Integration</p>
+                        <p class="text-slate-400 mt-1">Weeks 3 - 5</p>
+                    </div>
+
+                    <div class="bg-slate-900 p-4 rounded-lg border border-slate-800">
+                        <span class="text-vcet-light font-bold">Phase 3</span>
+                        <p class="font-bold text-white mt-1">Multilingual Content</p>
+                        <p class="text-slate-400 mt-1">Weeks 6 - 7</p>
+                    </div>
+
+                    <div class="bg-slate-900 p-4 rounded-lg border border-slate-800">
+                        <span class="text-vcet-light font-bold">Phase 4</span>
+                        <p class="font-bold text-white mt-1">Global Launch</p>
+                        <p class="text-slate-400 mt-1">Week 8</p>
+                    </div>
+                </div>
+
+                <div class="pt-6">
+                    <button onclick="toggleViewMode()" class="px-8 py-3 bg-vcet-light text-white font-bold rounded-lg hover:bg-vcet-brand transition-all-smooth">
+                        Explore Live Website Prototype
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Slide Footer Controls -->
+        <div class="flex justify-between items-center border-t border-slate-800 pt-4">
+            <button id="prevSlideBtn" onclick="changeSlide(-1)" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-xs font-bold rounded text-slate-300 flex items-center transition-all-smooth">
+                <i class="fa-solid fa-arrow-left mr-2"></i> Previous
+            </button>
+            <div class="flex space-x-2">
+                <span class="slide-dot w-2.5 h-2.5 rounded-full bg-vcet-light cursor-pointer" onclick="goToSlide(1)"></span>
+                <span class="slide-dot w-2.5 h-2.5 rounded-full bg-slate-700 cursor-pointer" onclick="goToSlide(2)"></span>
+                <span class="slide-dot w-2.5 h-2.5 rounded-full bg-slate-700 cursor-pointer" onclick="goToSlide(3)"></span>
+                <span class="slide-dot w-2.5 h-2.5 rounded-full bg-slate-700 cursor-pointer" onclick="goToSlide(4)"></span>
+                <span class="slide-dot w-2.5 h-2.5 rounded-full bg-slate-700 cursor-pointer" onclick="goToSlide(5)"></span>
+                <span class="slide-dot w-2.5 h-2.5 rounded-full bg-slate-700 cursor-pointer" onclick="goToSlide(6)"></span>
+                <span class="slide-dot w-2.5 h-2.5 rounded-full bg-slate-700 cursor-pointer" onclick="goToSlide(7)"></span>
+            </div>
+            <button id="nextSlideBtn" onclick="changeSlide(1)" class="px-4 py-2 bg-vcet-light hover:bg-vcet-brand text-xs font-bold rounded text-white flex items-center transition-all-smooth">
+                Next <i class="fa-solid fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- REQUEST FOR QUOTE (RFQ) MODAL -->
+    <div id="rfqModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl border border-slate-200 relative animate-in fade-in zoom-in duration-200">
+            <button onclick="closeRFQModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-xl font-bold transition-all-smooth">
+                &times;
+            </button>
+
+            <div class="mb-6">
+                <span class="text-vcet-light text-xs font-bold uppercase tracking-widest" data-i18n="modal_support">Direct Technical Support</span>
+                <h3 class="text-2xl font-bold text-slate-900" data-i18n="modal_title">Submit Request for Quote</h3>
+                <p class="text-xs text-slate-500 mt-1" data-i18n="modal_desc">Our project engineers will analyze your 2D/3D drawings within 24 hours.</p>
+            </div>
+
+            <form onsubmit="handleRFQSubmit(event)" class="space-y-4 text-sm">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="modal_comp">Company Name *</label>
+                        <input type="text" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-vcet-light transition-all-smooth">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="modal_email">Contact Email *</label>
+                        <input type="email" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-vcet-light transition-all-smooth">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="modal_sector">Target Sector</label>
+                        <select class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-vcet-light transition-all-smooth">
+                            <option>MedTech (38%)</option>
+                            <option>Watch Industry / Horology (31%)</option>
+                            <option>Automation (13%)</option>
+                            <option>Automotive (12%)</option>
+                            <option>Electronic / Connector (4%)</option>
+                            <option>Aerospace (2%)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="modal_material">Primary Material(s)</label>
+                        <select id="materialSelect" onchange="addSelectedMaterial(event)" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-vcet-light transition-all-smooth">
+                            <option value="" data-i18n="modal_select_mat">Add Raw Material...</option>
+                            <option>Aluminium</option>
+                            <option>Stainless Steel</option>
+                            <option>Tool Steel</option>
+                            <option>Mild Steel</option>
+                            <option>Delrin</option>
+                            <option>Peek</option>
+                            <option>POM</option>
+                            <option>Brass</option>
+                            <option>Carbide</option>
+                            <option>Copper</option>
+                            <option>Bronze</option>
+                            <option>Nylon</option>
+                            <option>Polyurethane (PU)</option>
+                            <option>Silver Steel</option>
+                            <option>Teflon</option>
+                            <option>Bearing Steel</option>
+                            <option>Titanium Grade 5</option>
+                            <option>PET-P</option>
+                            <option>Cast Iron Gg 25</option>
+                            <option>Cast Nylon</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Container showing selected materials with delete options -->
+                <div id="selectedMaterialsContainer" class="flex flex-wrap gap-1.5 min-h-[30px]"></div>
+
+                <!-- FILE ATTACHMENT FIELD WITH DELETE CAPABILITY -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="modal_file">Upload CAD Drawings (2D/3D Files)</label>
+                    <div class="flex items-center space-x-3">
+                        <label class="cursor-pointer px-4 py-2 rounded-lg bg-vcet-light/10 text-vcet-brand hover:bg-vcet-light/20 font-semibold text-xs border border-vcet-light/30 transition-all-smooth flex items-center shadow-sm">
+                            <i class="fa-solid fa-cloud-arrow-up mr-2"></i> <span data-i18n="modal_choose_file">Choose Files</span>
+                            <input type="file" id="rfqFileInput" multiple accept=".pdf,.dwg,.dxf,.step,.stp,.iges,.igs,.zip,.rar" class="hidden" onchange="handleFileSelect(event)">
+                        </label>
+                        <span id="fileCountLabel" class="text-xs text-slate-500 font-medium">No file chosen</span>
+                    </div>
+                    <!-- Selected Files Container with Delete Buttons -->
+                    <div id="selectedFilesList" class="mt-2.5 space-y-1.5 max-h-36 overflow-y-auto custom-scrollbar"></div>
+                    <p class="text-[10px] text-slate-400 mt-1">Supported formats: .STEP, .STP, .IGES, .DWG, .DXF, .PDF, .ZIP</p>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="modal_details">Project Details / Tolerance Requirements</label>
+                    <textarea rows="3" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-vcet-light transition-all-smooth" data-i18n-placeholder="modal_placeholder" placeholder="Specify quantities, surface finishes, or delivery timelines..."></textarea>
+                </div>
+
+                <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg flex justify-between items-center text-xs text-slate-600">
+                    <span><i class="fa-solid fa-lock text-vcet-light mr-1.5"></i> <span data-i18n="modal_nda">Strict NDA & Swiss Privacy Guaranteed</span></span>
+                </div>
+
+                <button type="submit" class="w-full py-3 bg-vcet-light hover:bg-vcet-brand text-white font-bold rounded-lg shadow-lg transition-all-smooth" data-i18n="modal_submit">
+                    Send RFQ to Engineering Team
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        const translations = {
+            en: {
+                top_excellence: "Celebrating 20 Years of Excellence (2004 - 2024)",
+                top_swiss: "Swiss Quality Produced in Malaysia",
+                nav_about: "About Us",
+                nav_history: "History",
+                nav_facility: "Facility",
+                nav_workflow: "Workflow",
+                nav_machines: "Machines",
+                nav_materials: "Materials & Tech",
+                nav_corporate: "Corporate & ESG",
+                btn_quote: "Request Quote",
+                hero_badge: "Est. 2004 • Malacca, Malaysia",
+                hero_title_1: "ENGINEERED FOR",
+                hero_title_2: "EUROPEAN PRECISION",
+                hero_desc: "VCET Asia is your ONE STOP SOLUTION for high-precision mechanical parts, prototypes, unit parts, and series assemblies. We bridge Swiss engineering quality with the manufacturing scale of Southeast Asia.",
+                ticker_machines: "Machine Capacity",
+                ticker_medtech: "MedTech Focus",
+                ticker_swiss: "Swiss Export",
+                ticker_partners: "Partner Facilities",
+                btn_capacities: "View Capacities",
+                btn_history_link: "Our History",
+                scale_subtitle: "Operational Scale",
+                scale_title: "Global Reach & Sectors",
+                view_mode_deck: "Switch to Presentation Deck",
+                view_mode_web: "Switch to Web Prototype",
+                stat_eu: "Europe Export",
+                stat_ch: "Swiss Export",
+                hq_label: "Malacca Headquarters",
+                iso_label: "ISO Audit Verified",
+                about_subtitle: "About VCET Asia",
+                about_title: "Your One-Stop Solution for Mechanical Components",
+                about_desc: "Established in 2004 in Malacca, VCET Asia bridges Swiss engineering expertise with high-capacity manufacturing ecosystems across Malaysia and Southeast Asia.",
+                about_card1_title: "High Precision Machining",
+                about_card1_desc: "Manufacturing prototype, single-unit, and mass-production high-precision mechanical parts with micron-level accuracy.",
+                about_card2_title: "Swiss Quality Assurance",
+                about_card2_desc: "Internal QA/QC labs equipped with vision (MMV) and 3D coordinate measuring machines (MMT) to meet demanding European criteria.",
+                about_card3_title: "Network Capacity",
+                about_card3_desc: "Over 20 audited partner manufacturing plants providing access to 600+ advanced CNC, EDM, and grinding machines.",
+                history_title: "Our History",
+                history_subtitle: "Two decades of continuous growth and technological advancement.",
+                facility_infra: "Facility Infrastructure",
+                facility_1: "Modern Reception & Admin Offices",
+                facility_2: "Dedicated Conference Rooms",
+                facility_3: "Specialized QC & Assembly Rooms",
+                facility_4: "Optimized Logistics Zone",
+                facility_subtitle: "Our Facilities",
+                facility_title: "Inside VCET Asia Headquarters",
+                facility_desc: "Take a visual tour of our modern Malacca headquarters, project offices, QC and assembly labs, storage zones, and advanced measuring equipment.",
+                history_p1: "Creation of the enterprise, establishment of the first VCET Asia office, setup of the Quality Control department, and commencement of mechanical subcontracting and assembly activities.",
+                history_p2: "Setup of the Project Management team, QA/QC departments, Finance, and Logistics. Acquisition of the first MMV machine. Implementation of the first ERP system (March 1, 2014).",
+                history_p3: "Upgrade of the ERP system to a modern cloud-based infrastructure for total operational integration.",
+                history_p4: "Relocation to the new building. Expansion of QA capabilities with the purchase of advanced MMV and MMT (Coordinate Measuring) machines.",
+                workflow_title: "8-Step Operational Workflow",
+                workflow_subtitle: "Fully integrated processes managed by our state-of-the-art Cloud ERP system.",
+                step1_title: "Client Request",
+                step1_desc: "Initial processing of the client's request for proposal.",
+                step2_title: "Project Managers",
+                step2_desc: "2D/3D drawing analysis, selection of appropriate partners, and advising on manufacturing optimization.",
+                step3_title: "Client Offer",
+                step3_desc: "Thorough price evaluation and formal offer submission.",
+                step4_title: "Planning",
+                step4_desc: "Documentation preparation, scheduling, and production tracking.",
+                step5_title: "Entry Control",
+                step5_desc: "Goods receipt and real-time inventory updates.",
+                step6_title: "Inspection",
+                step6_desc: "Internal QC checks, custom jig design for inspection, and pre-assembly testing.",
+                step7_title: "Execution",
+                step7_desc: "Jig design for assembly operations and final functionality testing.",
+                step8_title: "Shipping",
+                step8_desc: "Appropriate packaging to protect goods, fully EPTA certified for transport optimization.",
+                fac_card1_tag: "Reception & Admin",
+                fac_card1_title: "Modern Reception Area",
+                fac_card1_desc: "Welcoming client entrance with professional administrative quarters and brand display.",
+                fac_card2_tag: "Meetings & Strategy",
+                fac_card2_title: "Executive Conference Room",
+                fac_card2_desc: "Equipped for client reviews, project planning, and engineering collaborations.",
+                fac_card3_tag: "Workspace",
+                fac_card3_title: "Project Office Suite",
+                fac_card3_desc: "Collaborative workspace for our engineering and project management teams.",
+                fac_card4_tag: "Quality Control",
+                fac_card4_title: "Quality Control Office",
+                fac_card4_desc: "Dedicated office space for inspection planning, reporting, and documentation.",
+                fac_card5_tag: "Inspection & CMM",
+                fac_card5_title: "QC & CMM Measuring Lab",
+                fac_card5_desc: "High-precision 3D coordinate measuring machines and spiral staircase layout.",
+                fac_card6_tag: "Assembly & Benchwork",
+                fac_card6_title: "Assembly & Testing Workbenches",
+                fac_card6_desc: "Specialized workbenches equipped for precision mechanical assembly and verification.",
+                fac_card7_tag: "Quality Assurance",
+                fac_card7_title: "CMM 3D Measuring Lab",
+                fac_card7_desc: "High-precision 3D coordinate measuring machines (Spectrum) for stringent Swiss quality checks.",
+                fac_card8_tag: "Inspection & Vision",
+                fac_card8_title: "CNC VMM Inspection Suite",
+                fac_card8_desc: "Advanced optical and vision measuring systems for micron-level component validation.",
+                fac_card9_tag: "Packaging & Dispatch",
+                fac_card9_title: "Storage & Packaging Zone",
+                fac_card9_desc: "Organized racking and secure assembly packaging tables for global dispatch.",
+                cap_subtitle: "Manufacturing Infrastructure",
+                cap_title: "Advanced Machinery Capacities",
+                cap_desc: "A network of over 20 partners providing access to over 600 advanced machines.",
+                filter_all: "All Categories",
+                filter_milling: "CNC Milling",
+                filter_grinding: "CNC Grinding",
+                filter_turning: "CNC Turning",
+                filter_wirecut: "Wire Cut",
+                filter_edm: "Sink EDM",
+                milling_name: "3-Axis, 4-Axis & 5-Axis CNC Milling",
+                milling_desc: "High-speed vertical & horizontal milling centers for complex geometries.",
+                grinding_name: "CNC Grinding Systems",
+                grinding_desc: "Cylindrical 7-axis, surface, jig, honing, and profile grinding.",
+                turning_name: "CNC Turning & Swiss Lathes",
+                turning_desc: "Multi-axis turning centers (4-axis, 5+1 axis, 7-axis) for micro parts.",
+                wirecut_name: "Wire Cut Electro-Erosion",
+                wirecut_desc: "High-precision wire cut EDM and super drill capabilities.",
+                edm_name: "Sink EDM Machining",
+                edm_desc: "Die-sinking EDM machines for intricate mold and part cavity work.",
+                machines_unit: "Machines",
+                mat_subtitle: "Technical Expertise",
+                mat_title: "Comprehensive Raw Materials & Treatments",
+                mat_desc: "Mastering the complete directory of raw materials and specialized finishing treatments for extreme medical, aerospace, and horological precision.",
+                mat_box_title: "Raw Materials Directory",
+                treat_box_title: "Surface Treatments & Coatings",
+                rev_subtitle: "Revenue Breakdown",
+                rev_title: "Sectors Served",
+                rev_desc: "Driven by high-demand MedTech and Luxury Horology sectors.",
+                global_subtitle: "Global Reach",
+                global_title: "International Market Footprint",
+                global_desc: "Over 99% of our manufactured precision components are exported directly to European precision hubs, led by Switzerland and Western Europe.",
+                logistics_title: "EPTA Certified Logistics",
+                logistics_desc: "Optimized air freight routes guaranteeing secure and rapid door-to-door transit to Europe and US.",
+                corp_title: "Corporate Structure & Ethics",
+                corp_subtitle: "Committed to sustainability, community, and an inclusive workforce.",
+                dir_title: "Direction",
+                exec_ceocfo: "CEO / CFO",
+                exec_coocto: "COO / CTO",
+                exec_gm: "General Manager",
+                exec_team: "Management Team",
+                uni_partners_title: "University Partnerships",
+                demog_title: "Workforce Demographics",
+                men_label: "Male",
+                women_label: "Female",
+                esg_title: "Why VCET? (ESG & Value)",
+                esg_sus_title: "Sustainability",
+                esg_sus_desc: "Carbon footprint measurement, annual reporting, and ecological packaging materials.",
+                esg_com_title: "Community",
+                esg_com_desc: "Active engagement in charity projects and professional training programs.",
+                esg_qua_title: "Quality",
+                esg_qua_desc: "ISO certified audits, material/treatment certificates, and internal assembly testing.",
+                esg_cost_title: "Cost-Efficiency",
+                esg_cost_desc: "Highly competitive pricing with EPTA certified transport logistics.",
+                footer_desc: "Your ONE STOP SOLUTION. Connecting Swiss precision engineering with highly efficient Malaysian manufacturing capacities.",
+                footer_hq: "Headquarters",
+                footer_lines: "Direct Lines",
+                footer_copyright: "© 2004 - 2026 VCET ASIA SDN BHD. All rights reserved.",
+                modal_support: "Direct Technical Support",
+                modal_title: "Submit Request for Quote",
+                modal_desc: "Our project engineers will analyze your 2D/3D drawings within 24 hours.",
+                modal_comp: "Company Name *",
+                modal_email: "Contact Email *",
+                modal_sector: "Target Sector",
+                modal_material: "Primary Material(s)",
+                modal_select_mat: "Add Raw Material...",
+                modal_choose_file: "Choose Files",
+                modal_file: "Upload CAD Drawings (2D/3D Files)",
+                modal_details: "Project Details / Tolerance Requirements",
+                modal_placeholder: "Specify quantities, surface finishes, or delivery timelines...",
+                modal_nda: "Strict NDA & Swiss Privacy Guaranteed",
+                modal_submit: "Send RFQ to Engineering Team"
+            },
+            ms: {
+                top_excellence: "Meraikan 20 Tahun Kecemerlangan (2004 - 2024)",
+                top_swiss: "Kualiti Switzerland Dikeluarkan di Malaysia",
+                nav_about: "Tentang Kami",
+                nav_history: "Sejarah",
+                nav_facility: "Fasiliti",
+                nav_workflow: "Aliran Kerja",
+                nav_machines: "Mesin",
+                nav_materials: "Bahan & Teknologi",
+                nav_corporate: "Korporat & ESG",
+                btn_quote: "Mohon Sebut Harga",
+                hero_badge: "Ditubuhkan 2004 • Melaka, Malaysia",
+                hero_title_1: "DIKEJURUTERAAN UNTUK",
+                hero_title_2: "KETEPATAN EROPAH",
+                hero_desc: "VCET Asia adalah PENYELESAIAN SETEMPAT anda untuk bahagian mekanikal berketepatan tinggi, prototaip, dan pemasangan bersiri. Kami menggabungkan kualiti kejuruteraan Switzerland dengan skala pembuatan Asia Tenggara.",
+                ticker_machines: "Kapasiti Mesin",
+                ticker_medtech: "Fokus MedTech",
+                ticker_swiss: "Eksport Switzerland",
+                ticker_partners: "Fasiliti Rakan Kongsi",
+                btn_capacities: "Lihat Kapasiti",
+                btn_history_link: "Sejarah Kami",
+                scale_subtitle: "Skala Operasi",
+                scale_title: "Jangkauan Global & Sektor",
+                view_mode_deck: "Tukar ke Dek Pembentangan",
+                view_mode_web: "Tukar ke Prototaip Web",
+                stat_eu: "Eksport Eropah",
+                stat_ch: "Eksport Switzerland",
+                hq_label: "Ibu Pejabat Melaka",
+                iso_label: "Audit ISO Disahkan",
+                about_subtitle: "Mengenai VCET Asia",
+                about_title: "Penyelesaian Setempat untuk Komponen Mekanikal",
+                about_desc: "Ditubuhkan pada tahun 2004 di Melaka, VCET Asia menggabungkan kepakaran kejuruteraan Switzerland dengan ekosistem pembuatan kapasiti tinggi merentasi Malaysia dan Asia Tenggara.",
+                about_card1_title: "Pemesinan Berketepatan Tinggi",
+                about_card1_desc: "Pembuatan prototaip, unit tunggal, dan alat ganti mekanikal ketepatan tinggi pengeluaran besar-besaran dengan ketepatan paras mikron.",
+                about_card2_title: "Jaminan Kualiti Switzerland",
+                about_card2_desc: "Makmal QA/QC dalaman dilengkapi dengan mesin pengukur penglihatan (MMV) dan mesin pengukur koordinat 3D (MMT) untuk memenuhi kriteria Eropah.",
+                about_card3_title: "Kapasiti Rangkaian",
+                about_card3_desc: "Lebih 20 kilang rakan kongsi diaudit yang menyediakan akses kepada lebih 600 mesin CNC, EDM, dan pengisaran termaju.",
+                history_title: "Sejarah Kami",
+                history_subtitle: "Dua dekad pertumbuhan berterusan dan kemajuan teknologi.",
+                facility_infra: "Infrastruktur Fasiliti",
+                facility_1: "Pejabat Pentadbiran & Sambutan Moden",
+                facility_2: "Bilik Persidangan Khusus",
+                facility_3: "Bilik QC & Pemasangan Khas",
+                facility_4: "Zon Logistik Dioptimumkan",
+                facility_subtitle: "Fasiliti Kami",
+                facility_title: "Di Dalam Ibu Pejabat VCET Asia",
+                facility_desc: "Ikuti lawatan visual ibu pejabat moden kami di Melaka, pejabat projek, makmal QC, zon penyimpanan dan peralatan pengukur canggih.",
+                history_p1: "Penciptaan perusahaan, penubuhan pejabat VCET Asia yang pertama, persediaan jabatan Kawalan Kualiti, dan permulaan aktiviti subkontrak dan pemasangan mekanikal.",
+                history_p2: "Penubuhan pasukan Pengurusan Projek, jabatan QA/QC, Kewangan, dan Logistik. Pemerolehan mesin MMV yang pertama. Pelaksanaan sistem ERP yang pertama (1 Mac 2014).",
+                history_p3: "Peningkatan sistem ERP kepada infrastruktur berasaskan awan untuk penyepaduan operasi keseluruhan.",
+                history_p4: "Pemindahan ke bangunan baharu. Peluasan kapasiti QA dengan pembelian mesin MMV dan MMT (Pengukur Koordinat) termaju.",
+                workflow_title: "Aliran Kerja Operasi 8-Langkah",
+                workflow_subtitle: "Proses bersepadu sepenuhnya yang diuruskan oleh sistem Cloud ERP terkini kami.",
+                step1_title: "Permintaan Pelanggan",
+                step1_desc: "Pemprosesan awal permohonan cadangan pelanggan.",
+                step2_title: "Pengurus Projek",
+                step2_desc: "Analisis lukisan 2D/3D, pemilihan rakan kongsi yang sesuai, dan menasihati mengenai pengoptimuman pembuatan.",
+                step3_title: "Tawaran Pelanggan",
+                step3_desc: "Penilaian harga menyeluruh dan penyerahan tawaran rasmi.",
+                step4_title: "Perancangan",
+                step4_desc: "Penyediaan dokumentasi, penjadualan, dan penjejakan pengeluaran.",
+                step5_title: "Kawalan Masuk",
+                step5_desc: "Penerimaan barangan dan kemas kini inventori masa nyata.",
+                step6_title: "Pemeriksaan",
+                step6_desc: "Pemeriksaan QC dalaman, reka bentuk jig tersuai untuk pemeriksaan, dan ujian pra-pemasangan.",
+                step7_title: "Pelaksanaan",
+                step7_desc: "Reka bentuk jig untuk operasi pemasangan dan ujian kefungsian akhir.",
+                step8_title: "Penghantaran",
+                step8_desc: "Pembungkusan yang sesuai untuk melindungi barangan, diiktiraf EPTA sepenuhnya untuk pengoptimuman pengangkutan.",
+                fac_card1_tag: "Penerimaan & Pentadbiran",
+                fac_card1_title: "Kawasan Penerimaan Moden",
+                fac_card1_desc: "Pintu masuk pelanggan yang mengalu-alukan dengan pejabat pentadbiran profesional dan paparan jenama.",
+                fac_card2_tag: "Mesyuarat & Strategi",
+                fac_card2_title: "Bilik Persidangan Eksekutif",
+                fac_card2_desc: "Dilengkapi untuk ulasan pelanggan, perancangan projek, dan kerjasama kejuruteraan.",
+                fac_card3_tag: "Ruang Kerja",
+                fac_card3_title: "Suite Pejabat Projek",
+                fac_card3_desc: "Ruang kerja kolaboratif untuk pasukan kejuruteraan dan pengurusan projek kami.",
+                fac_card4_tag: "Kawalan Kualiti",
+                fac_card4_title: "Pejabat Kawalan Kualiti",
+                fac_card4_desc: "Ruang pejabat khusus untuk perancangan pemeriksaan, pelaporan, dan dokumentasi.",
+                fac_card5_tag: "Pemeriksaan & CMM",
+                fac_card5_title: "Makmal Mengukur QC & CMM",
+                fac_card5_desc: "Mesin pengukur koordinat 3D berketepatan tinggi dan susun atur tangga berpusar.",
+                fac_card6_tag: "Pemasangan & Kerja Bangku",
+                fac_card6_title: "Bangku Kerja Pemasangan & Ujian",
+                fac_card6_desc: "Bangku kerja khusus yang dilengkapi untuk pemasangan mekanikal dan pengesahan ketepatan.",
+                fac_card7_tag: "Jaminan Kualiti",
+                fac_card7_title: "Makmal Pengukur CMM 3D",
+                fac_card7_desc: "Mesin pengukur koordinat 3D (Spectrum) berketepatan tinggi untuk pemeriksaan kualiti Switzerland yang ketat.",
+                fac_card8_tag: "Pemeriksaan & Visi",
+                fac_card8_title: "Suite Pemeriksaan CNC VMM",
+                fac_card8_desc: "Sistem pengukur optik dan penglihatan lanjutan untuk pengesahan komponen paras mikron.",
+                fac_card9_tag: "Pembungkusan & Penghantaran",
+                fac_card9_title: "Zon Penyimpanan & Pembungkusan",
+                fac_card9_desc: "Rak yang teratur dan meja pembungkusan pemasangan yang selamat untuk penghantaran global.",
+                cap_subtitle: "Infrastruktur Pembuatan",
+                cap_title: "Kapasiti Jentera Termaju",
+                cap_desc: "Rangkaian lebih 20 rakan kongsi yang menyediakan akses kepada lebih 600 mesin termaju.",
+                filter_all: "Semua Kategori",
+                filter_milling: "Pengilangan CNC",
+                filter_grinding: "Pengisaran CNC",
+                filter_turning: "Putaran CNC",
+                filter_wirecut: "Potong Wayar",
+                filter_edm: "Singki EDM",
+                milling_name: "Pengilangan CNC 3, 4 & 5-Paksi",
+                milling_desc: "Pusat pengilangan menegak & mendatar berkelajuan tinggi.",
+                grinding_name: "Sistem Pengisaran CNC",
+                grinding_desc: "Pengisaran silinder 7-paksi, permukaan, dan profil.",
+                turning_name: "Putaran CNC & Pelarik Swiss",
+                turning_desc: "Pusat putaran pelbagai paksi (4-paksi, 5+1 paksi, 7-paksi).",
+                wirecut_name: "Pemotongan Wayar Elektro-Hakisan",
+                wirecut_desc: "EDM pemotongan wayar berketepatan tinggi dan gerudi super.",
+                edm_name: "Pemesinan Sink EDM",
+                edm_desc: "Mesin EDM die-sinking untuk kerja rongga.",
+                machines_unit: "Mesin",
+                mat_subtitle: "Kepakaran Teknikal",
+                mat_title: "Bahan Mentah & Rawatan Komprehensif",
+                mat_desc: "Menguasai direktori lengkap bahan mentah dan rawatan kemasan khusus.",
+                mat_box_title: "Direktori Bahan Mentah",
+                treat_box_title: "Rawatan Permukaan & Salutan",
+                rev_subtitle: "Pecahan Hasil",
+                rev_title: "Sektor Yang Dilayan",
+                rev_desc: "Didorong oleh permintaan tinggi dari sektor Teknologi Perubatan dan Jam Tangan Mewah.",
+                global_subtitle: "Jangkauan Global",
+                global_title: "Jejak Pasaran Antarabangsa",
+                global_desc: "Lebih 99% komponen ketepatan kami dieksport terus ke Eropah.",
+                logistics_title: "Logistik Disahkan EPTA",
+                logistics_desc: "Laluan pengangkutan udara dioptimumkan menjamin transit pintu ke pintu yang selamat dan pantas.",
+                corp_title: "Struktur & Etika Korporat",
+                corp_subtitle: "Komited kepada kelestarian, komuniti, dan tenaga kerja inklusif.",
+                dir_title: "Arah",
+                exec_ceocfo: "CEO / CFO",
+                exec_coocto: "COO / CTO",
+                exec_gm: "Pengurus Besar",
+                exec_team: "Pasukan Pengurusan",
+                uni_partners_title: "Perkongsian Universiti",
+                demog_title: "Demografi Tenaga Kerja",
+                men_label: "Lelaki",
+                women_label: "Perempuan",
+                esg_title: "Mengapa VCET? (ESG & Nilai)",
+                esg_sus_title: "Kelestarian",
+                esg_sus_desc: "Pengukuran jejak karbon, laporan tahunan, dan pembungkusan ekologi.",
+                esg_com_title: "Komuniti",
+                esg_com_desc: "Penglibatan aktif dalam projek amal dan program latihan profesional.",
+                esg_qua_title: "Kualiti",
+                esg_qua_desc: "Audit disahkan ISO, sijil bahan/rawatan, dan ujian pemasangan dalaman.",
+                esg_cost_title: "Kecekapan Kos",
+                esg_cost_desc: "Harga yang sangat kompetitif dengan logistik pengangkutan disahkan EPTA.",
+                footer_desc: "PENYELESAIAN SETEMPAT Anda. Menghubungkan kejuruteraan ketepatan Switzerland dengan kapasiti pembuatan Malaysia.",
+                footer_hq: "Ibu Pejabat",
+                footer_lines: "Talian Terus",
+                footer_copyright: "© 2004 - 2026 VCET ASIA SDN BHD. Hak cipta terpelihara.",
+                modal_support: "Sokongan Teknikal Langsung",
+                modal_title: "Mohon Sebut Harga",
+                modal_desc: "Jurutera projek kami akan menganalisis lukisan 2D/3D anda dalam masa 24 jam.",
+                modal_comp: "Nama Syarikat *",
+                modal_email: "E-mel Kenalan *",
+                modal_sector: "Sektor Sasaran",
+                modal_material: "Bahan Utama",
+                modal_select_mat: "Tambah Bahan Mentah...",
+                modal_choose_file: "Pilih Fail",
+                modal_file: "Muat Naik Lukisan CAD (Fail 2D/3D)",
+                modal_details: "Butiran Projek / Keperluan Toleransi",
+                modal_placeholder: "Nyatakan kuantiti, kemasan permukaan, atau garis masa penghantaran...",
+                modal_nda: "NDA Ketat & Privasi Switzerland Dijamin",
+                modal_submit: "Hantar RFQ ke Pasukan Kejuruteraan"
+            },
+            zh: {
+                top_excellence: "庆祝卓越 20 周年 (2004 - 2024)",
+                top_swiss: "马来西亚制造的瑞士品质",
+                nav_about: "关于我们",
+                nav_history: "公司历史",
+                nav_facility: "设施",
+                nav_workflow: "工作流程",
+                nav_machines: "机器设备",
+                nav_materials: "材料与技术",
+                nav_corporate: "企业与ESG",
+                btn_quote: "获取报价",
+                hero_badge: "成立于 2004 • 马来西亚马六甲",
+                hero_title_1: "专为",
+                hero_title_2: "欧洲精密制造",
+                hero_desc: "VCET Asia 是您高精度机械零件、原型和批量组装的一站式解决方案。我们将瑞士工程质量与东南亚的制造规模结合起来。",
+                ticker_machines: "机器产能",
+                ticker_medtech: "医疗技术重点",
+                ticker_swiss: "瑞士出口",
+                ticker_partners: "合作伙伴设施",
+                btn_capacities: "查看产能",
+                btn_history_link: "我们的历史",
+                scale_subtitle: "运营规模",
+                scale_title: "全球业务与行业",
+                view_mode_deck: "切换到演示文稿模式",
+                view_mode_web: "切换到网页原型",
+                stat_eu: "欧洲出口",
+                stat_ch: "瑞士出口",
+                hq_label: "马六甲总部",
+                iso_label: "ISO 认证",
+                about_subtitle: "关于 VCET Asia",
+                about_title: "机械零件的一站式解决方案",
+                about_desc: "VCET Asia 于 2004 年在马六甲成立，将瑞士工程专业知识与马来西亚及东南亚的大规模制造生态系统联系起来。",
+                about_card1_title: "高精度加工",
+                about_card1_desc: "制造具有微米级精度的原型、单件和量产高精度机械零件。",
+                about_card2_title: "瑞士质量保证",
+                about_card2_desc: "内部 QA/QC 实验室配备视觉 (MMV) 和 3D 坐标测量机 (MMT)，以满足苛刻的欧洲标准。",
+                about_card3_title: "网络产能",
+                about_card3_desc: "超过 20 家经过审计的合作伙伴制造工厂，提供使用 600 多台先进 CNC、EDM 和磨床的权限。",
+                history_title: "我们的历史",
+                history_subtitle: "二十年的持续增长和技术进步。",
+                facility_infra: "设施基础设施",
+                facility_1: "现代化的接待和行政办公室",
+                facility_2: "专用会议室",
+                facility_3: "专门的质量控制和组装室",
+                facility_4: "优化的物流区",
+                facility_subtitle: "我们的设施",
+                facility_title: "VCET Asia 总部内部",
+                facility_desc: "视觉参观我们在马六甲的现代总部、项目办公室、QC 实验室、存储区和先进的测量设备。",
+                history_p1: "企业成立，建立第一个 VCET Asia 办公室，设立质量控制部门，并开始机械分包和组装业务。",
+                history_p2: "建立项目管理团队、QA/QC 部门、财务和物流。购买第一台 MMV 机器。实施第一个 ERP 系统（2014 年 3 月 1 日）。",
+                history_p3: "将 ERP 系统升级为基于云的基础设施，实现全面运营整合。",
+                history_p4: "搬迁至新大楼。通过购买先进的 MMV 和 MMT（坐标测量机）扩大 QA 能力。",
+                workflow_title: "8 步运营工作流程",
+                workflow_subtitle: "由我们最先进的云 ERP 系统管理的全面整合流程。",
+                step1_title: "客户请求",
+                step1_desc: "客户提案请求的初始处理。",
+                step2_title: "项目经理",
+                step2_desc: "2D/3D 图纸分析，选择合适的合作伙伴，并提供制造优化建议。",
+                step3_title: "客户报价",
+                step3_desc: "彻底的价格评估和正式报价提交。",
+                step4_title: "计划",
+                step4_desc: "文件准备、排期和生产跟踪。",
+                step5_title: "入库控制",
+                step5_desc: "收货和实时库存更新。",
+                step6_title: "检查",
+                step6_desc: "内部 QC 检查、用于检查的定制夹具设计以及组装前测试。",
+                step7_title: "执行",
+                step7_desc: "组装操作的夹具设计和最终功能测试。",
+                step8_title: "运输",
+                step8_desc: "适当的包装以保护货物，经过全面的 EPTA 认证以优化运输。",
+                fac_card1_tag: "接待与行政",
+                fac_card1_title: "现代化接待区",
+                fac_card1_desc: "热情的客户入口，配有专业的行政区和品牌展示。",
+                fac_card2_tag: "会议与战略",
+                fac_card2_title: "行政会议室",
+                fac_card2_desc: "配备用于客户审查、项目规划和工程协作的设施。",
+                fac_card3_tag: "工作区",
+                fac_card3_title: "项目办公套件",
+                fac_card3_desc: "为我们的工程和项目管理团队提供的协作工作区。",
+                fac_card4_tag: "质量控制",
+                fac_card4_title: "质量控制办公室",
+                fac_card4_desc: "专用于检查计划、报告和记录的办公空间。",
+                fac_card5_tag: "检查与 CMM",
+                fac_card5_title: "QC 与 CMM 测量实验室",
+                fac_card5_desc: "高精度 3D 坐标测量机和螺旋楼梯布局。",
+                fac_card6_tag: "组装与工作台",
+                fac_card6_title: "组装与测试工作台",
+                fac_card6_desc: "配备用于精密机械组装和验证的专用工作台。",
+                fac_card7_tag: "质量保证",
+                fac_card7_title: "CMM 3D 测量实验室",
+                fac_card7_desc: "高精度 3D 坐标测量机 (Spectrum)，用于严格的瑞士质量检查。",
+                fac_card8_tag: "检查与视觉",
+                fac_card8_title: "CNC VMM 检查套件",
+                fac_card8_desc: "用于微米级组件验证的高级光学和视觉测量系统。",
+                fac_card9_tag: "包装与发货",
+                fac_card9_title: "存储与包装区",
+                fac_card9_desc: "井然有序的货架和安全的组装包装台，用于全球发货。",
+                cap_subtitle: "制造基础设施",
+                cap_title: "先进的机器产能",
+                cap_desc: "超过 20 个合作伙伴的网络，可访问 600 多台先进的机器。",
+                filter_all: "所有类别",
+                filter_milling: "CNC 铣削",
+                filter_grinding: "CNC 磨削",
+                filter_turning: "CNC 车削",
+                filter_wirecut: "线切割",
+                filter_edm: "电火花成型",
+                milling_name: "3轴、4轴和5轴CNC铣削",
+                milling_desc: "高速立式和卧式加工中心。",
+                grinding_name: "CNC 磨削系统",
+                grinding_desc: "外圆7轴、平面、珩磨及成型磨削。",
+                turning_name: "CNC 车削和瑞士车床",
+                turning_desc: "多轴车削中心 (4轴、5+1轴、7轴)。",
+                wirecut_name: "线切割电火花加工",
+                wirecut_desc: "高精度线切割EDM和超级钻孔。",
+                edm_name: "电火花成型加工",
+                edm_desc: "用于型腔加工的电火花成型机。",
+                machines_unit: "台",
+                mat_subtitle: "技术专长",
+                mat_title: "全面的原材料和表面处理",
+                mat_desc: "掌握极高医疗、航空航天和钟表精度所需的完整原材料和专门的表面处理技术。",
+                mat_box_title: "原材料目录",
+                treat_box_title: "表面处理和涂层",
+                rev_subtitle: "收入明细",
+                rev_title: "服务的行业",
+                rev_desc: "由高需求的医疗技术和奢侈钟表行业驱动。",
+                global_subtitle: "全球影响力",
+                global_title: "国际市场足迹",
+                global_desc: "我们制造的精密组件中超过 99% 直接出口到欧洲精密中心。",
+                logistics_title: "EPTA 认证物流",
+                logistics_desc: "优化的空运路线保证安全快速的门到门运输到欧洲。",
+                corp_title: "公司结构与道德",
+                corp_subtitle: "致力于可持续发展、社区和包容性的员工队伍。",
+                dir_title: "方向",
+                exec_ceocfo: "首席执行官 / 首席财务官",
+                exec_coocto: "首席运营官 / 首席技术官",
+                exec_gm: "总经理",
+                exec_team: "管理团队",
+                uni_partners_title: "大学合作伙伴",
+                demog_title: "劳动力人口统计",
+                men_label: "男性",
+                women_label: "女性",
+                esg_title: "为什么选择 VCET？(ESG 与价值)",
+                esg_sus_title: "可持续发展",
+                esg_sus_desc: "碳足迹测量、年度报告和生态包装材料。",
+                esg_com_title: "社区",
+                esg_com_desc: "积极参与慈善项目和专业培训计划。",
+                esg_qua_title: "质量",
+                esg_qua_desc: "ISO 认证审计、材料/处理证书以及内部组装测试。",
+                esg_cost_title: "成本效益",
+                esg_cost_desc: "极具竞争力的价格以及 EPTA 认证的运输物流。",
+                footer_desc: "您的一站式解决方案。将瑞士精密工程与高效的马来西亚制造能力联系起来。",
+                footer_hq: "总部",
+                footer_lines: "直拨专线",
+                footer_copyright: "© 2004 - 2026 VCET ASIA SDN BHD. 保留所有权利。",
+                modal_support: "直接技术支持",
+                modal_title: "提交报价请求",
+                modal_desc: "我们的项目工程师将在 24 小时内分析您的 2D/3D 图纸。",
+                modal_comp: "公司名称 *",
+                modal_email: "联系邮箱 *",
+                modal_sector: "目标行业",
+                modal_material: "主要材料",
+                modal_select_mat: "添加原材料...",
+                modal_choose_file: "选择文件",
+                modal_file: "上传 CAD 图纸（2D/3D 文件）",
+                modal_details: "项目详细信息 / 公差要求",
+                modal_placeholder: "指定数量、表面光洁度或交货时间表...",
+                modal_nda: "严格的 NDA 和瑞士隐私保证",
+                modal_submit: "将询价单发送给工程团队"
+            },
+            de: {
+                top_excellence: "20 Jahre Exzellenz (2004 - 2024)",
+                top_swiss: "Schweizer Qualität in Malaysia produziert",
+                nav_about: "Über Uns",
+                nav_history: "Geschichte",
+                nav_facility: "Einrichtungen",
+                nav_workflow: "Arbeitsablauf",
+                nav_machines: "Maschinen",
+                nav_materials: "Materialien & Technik",
+                nav_corporate: "Unternehmen & ESG",
+                btn_quote: "Angebot Anfordern",
+                hero_badge: "Gegr. 2004 • Malakka, Malaysia",
+                hero_title_1: "ENTWICKELT FÜR",
+                hero_title_2: "EUROPÄISCHE PRÄZISION",
+                hero_desc: "VCET Asia ist Ihre LÖSUNG AUS EINER HAND für hochpräzise mechanische Teile. Wir verbinden Schweizer Ingenieursqualität mit der Produktionskapazität Südostasiens.",
+                ticker_machines: "Maschinenkapazität",
+                ticker_medtech: "MedTech Fokus",
+                ticker_swiss: "Schweizer Export",
+                ticker_partners: "Partneranlagen",
+                btn_capacities: "Kapazitäten Anzeigen",
+                btn_history_link: "Unsere Geschichte",
+                scale_subtitle: "Betriebsgröße",
+                scale_title: "Globale Reichweite & Sektoren",
+                view_mode_deck: "Zum Präsentationsdeck wechseln",
+                view_mode_web: "Zum Web-Prototyp wechseln",
+                stat_eu: "Europa Export",
+                stat_ch: "Schweizer Export",
+                hq_label: "Hauptsitz in Malakka",
+                iso_label: "ISO-Audit verifiziert",
+                about_subtitle: "Über VCET Asia",
+                about_title: "Ihre Lösung aus einer Hand für mechanische Komponenten",
+                about_desc: "Das 2004 in Malakka gegründete Unternehmen VCET Asia verbindet Schweizer Ingenieurskunst mit leistungsstarken Produktions-Ökosystemen in Malaysia und Südostasien.",
+                about_card1_title: "Hochpräzise Bearbeitung",
+                about_card1_desc: "Herstellung von hochpräzisen mechanischen Teilen als Prototypen, Einzelstücke und in der Massenproduktion.",
+                about_card2_title: "Schweizer Qualitätssicherung",
+                about_card2_desc: "Interne QS/QK-Labore, die mit optischen (MMV) und 3D-Koordinatenmessgeräten (MMT) ausgestattet sind.",
+                about_card3_title: "Netzwerkkapazität",
+                about_card3_desc: "Über 20 geprüfte Partnerfertigungswerke bieten Zugang zu mehr als 600 modernen CNC-, EDM- und Schleifmaschinen.",
+                history_title: "Unsere Geschichte",
+                history_subtitle: "Zwei Jahrzehnte kontinuierliches Wachstum und technologischer Fortschritt.",
+                facility_infra: "Infrastruktur",
+                facility_1: "Moderne Empfangs- und Verwaltungsbüros",
+                facility_2: "Spezielle Konferenzräume",
+                facility_3: "Spezialisierte QS- & Montageräume",
+                facility_4: "Optimierte Logistikzone",
+                facility_subtitle: "Unsere Einrichtungen",
+                facility_title: "Im Hauptsitz von VCET Asia",
+                facility_desc: "Machen Sie einen visuellen Rundgang durch unseren modernen Hauptsitz in Malakka.",
+                history_p1: "Gründung des Unternehmens, Einrichtung des ersten VCET Asia-Büros.",
+                history_p2: "Aufbau des Projektmanagementteams, der QA/QC-Abteilungen. Erste MMV-Maschine.",
+                history_p3: "Upgrade des ERP-Systems auf eine moderne Cloud-basierte Infrastruktur.",
+                history_p4: "Umzug in das neue Gebäude. Erweiterung der QS-Kapazitäten.",
+                workflow_title: "8-Stufen-Arbeitsablauf",
+                workflow_subtitle: "Vollständig integrierte Prozesse, die von unserem Cloud-ERP-System verwaltet werden.",
+                step1_title: "Kundenanfrage",
+                step1_desc: "Erste Bearbeitung der Angebotsanfrage des Kunden.",
+                step2_title: "Projektmanager",
+                step2_desc: "2D/3D-Zeichnungsanalyse, Auswahl geeigneter Partner.",
+                step3_title: "Kundenangebot",
+                step3_desc: "Gründliche Preisbewertung und formelle Angebotsabgabe.",
+                step4_title: "Planung",
+                step4_desc: "Dokumentationserstellung, Terminplanung und Produktionsverfolgung.",
+                step5_title: "Eingangskontrolle",
+                step5_desc: "Wareneingang und Echtzeit-Bestandsaktualisierungen.",
+                step6_title: "Inspektion",
+                step6_desc: "Interne Qualitätskontrollen und Vormontagetests.",
+                step7_title: "Ausführung",
+                step7_desc: "Vorrichtungsbau für Montagearbeiten und letzte Funktionstests.",
+                step8_title: "Versand",
+                step8_desc: "Angemessene Verpackung und vollständig EPTA-zertifizierte Logistik.",
+                fac_card1_tag: "Empfang & Verwaltung",
+                fac_card1_title: "Moderner Empfangsbereich",
+                fac_card1_desc: "Einladender Kundeneingang.",
+                fac_card2_tag: "Meetings & Strategie",
+                fac_card2_title: "Executive Konferenzraum",
+                fac_card2_desc: "Ausgestattet für Kundenbewertungen und Projektplanung.",
+                fac_card3_tag: "Arbeitsbereich",
+                fac_card3_title: "Projektbüros",
+                fac_card3_desc: "Kollaborativer Arbeitsbereich.",
+                fac_card4_tag: "Qualitätskontrolle",
+                fac_card4_title: "QK-Büro",
+                fac_card4_desc: "Spezieller Büroraum für Prüfplanung.",
+                fac_card5_tag: "Inspektion & CMM",
+                fac_card5_title: "QC & CMM Messlabor",
+                fac_card5_desc: "Hochpräzise 3D-Koordinatenmessgeräte.",
+                fac_card6_tag: "Montage",
+                fac_card6_title: "Montage- & Prüfwerkbänke",
+                fac_card6_desc: "Spezialisierte Werkbänke.",
+                fac_card7_tag: "Qualitätssicherung",
+                fac_card7_title: "CMM 3D-Messlabor",
+                fac_card7_desc: "CMM für strenge Schweizer Qualitätsprüfungen.",
+                fac_card8_tag: "Optische Prüfung",
+                fac_card8_title: "CNC VMM Inspektionssuite",
+                fac_card8_desc: "Optische Messsysteme.",
+                fac_card9_tag: "Verpackung & Versand",
+                fac_card9_title: "Lager- & Verpackungszone",
+                fac_card9_desc: "Organisierte Regale und sichere Verpackungstische.",
+                cap_subtitle: "Fertigungsinfrastruktur",
+                cap_title: "Fortschrittliche Maschinenkapazitäten",
+                cap_desc: "Zugang zu über 600 modernen Maschinen.",
+                filter_all: "Alle Kategorien",
+                filter_milling: "CNC-Fräsen",
+                filter_grinding: "CNC-Schleifen",
+                filter_turning: "CNC-Drehen",
+                filter_wirecut: "Drahterodieren",
+                filter_edm: "Senkerodieren",
+                milling_name: "3-Achs, 4-Achs & 5-Achs CNC-Fräsen",
+                milling_desc: "Vertikale und horizontale Hochgeschwindigkeits-Fräszentren.",
+                grinding_name: "CNC-Schleifsysteme",
+                grinding_desc: "Zylindrisches 7-Achs-, Flächen- und Profilschleifen.",
+                turning_name: "CNC-Drehen & Langdrehautomaten",
+                turning_desc: "Mehrachsige Drehzentren (4-Achs, 5+1-Achs, 7-Achs).",
+                wirecut_name: "Drahterodieren",
+                wirecut_desc: "Hochpräzise Drahterodiermaschinen.",
+                edm_name: "Senkerodieren",
+                edm_desc: "Senkerodiermaschinen für Hohlraumbearbeitungen.",
+                machines_unit: "Maschinen",
+                mat_subtitle: "Technische Expertise",
+                mat_title: "Umfassende Rohstoffe & Behandlungen",
+                mat_desc: "Wir beherrschen das komplette Verzeichnis der Rohstoffe und Spezialbehandlungen.",
+                mat_box_title: "Rohstoffverzeichnis",
+                treat_box_title: "Oberflächenbehandlungen & Beschichtungen",
+                rev_subtitle: "Umsatzaufschlüsselung",
+                rev_title: "Bediente Sektoren",
+                rev_desc: "Angetrieben von MedTech und Luxusuhren.",
+                global_subtitle: "Globale Reichweite",
+                global_title: "Internationale Marktpräsenz",
+                global_desc: "Über 99 % unserer Präzisionskomponenten werden exportiert.",
+                logistics_title: "EPTA-zertifizierte Logistik",
+                logistics_desc: "Optimierte Luftfrachtrouten nach Europa.",
+                corp_title: "Unternehmensstruktur & Ethik",
+                corp_subtitle: "Engagement für Nachhaltigkeit.",
+                dir_title: "Geschäftsführung",
+                exec_ceocfo: "CEO / CFO",
+                exec_coocto: "COO / CTO",
+                exec_gm: "Geschäftsführer",
+                exec_team: "Management-Team",
+                uni_partners_title: "Universitätspartnerschaften",
+                demog_title: "Arbeitnehmerdemografie",
+                men_label: "Männlich",
+                women_label: "Weiblich",
+                esg_title: "Warum VCET? (ESG & Wert)",
+                esg_sus_title: "Nachhaltigkeit",
+                esg_sus_desc: "CO2-Fußabdruckmessung und ökologische Verpackungen.",
+                esg_com_title: "Gemeinschaft",
+                esg_com_desc: "Aktives Engagement für Wohltätigkeit.",
+                esg_qua_title: "Qualität",
+                esg_qua_desc: "ISO-zertifizierte Audits.",
+                esg_cost_title: "Kosteneffizienz",
+                esg_cost_desc: "Wettbewerbsfähige Preise.",
+                footer_desc: "Ihre LÖSUNG AUS EINER HAND. Schweizer Präzision und malaysische Produktion.",
+                footer_hq: "Hauptsitz",
+                footer_lines: "Direktleitungen",
+                footer_copyright: "© 2004 - 2026 VCET ASIA SDN BHD. Alle Rechte vorbehalten.",
+                modal_support: "Direkter technischer Support",
+                modal_title: "Angebot für Anfrage senden",
+                modal_desc: "Unsere Projektingenieure analysieren Ihre Zeichnungen innerhalb von 24 Stunden.",
+                modal_comp: "Firmenname *",
+                modal_email: "Kontakt-E-Mail *",
+                modal_sector: "Zielsektor",
+                modal_material: "Primärmaterialien",
+                modal_select_mat: "Rohmaterial hinzufügen...",
+                modal_choose_file: "Dateien auswählen",
+                modal_file: "CAD-Zeichnungen hochladen (2D/3D-Dateien)",
+                modal_details: "Projektdetails / Toleranzanforderungen",
+                modal_placeholder: "Geben Sie Mengen, Oberflächen oder Lieferzeiten an...",
+                modal_nda: "Strenge NDA und Schweizer Privatsphäre garantiert",
+                modal_submit: "Senden an das Engineering-Team"
+            },
+            fr: {
+                top_excellence: "Célébration de 20 ans d'excellence (2004 - 2024)",
+                top_swiss: "Qualité Suisse produite en Malaisie",
+                nav_about: "À Propos",
+                nav_history: "Historique",
+                nav_facility: "Installations",
+                nav_workflow: "Flux de travail",
+                nav_machines: "Machines",
+                nav_materials: "Matériaux et Tech",
+                nav_corporate: "Entreprise et ESG",
+                btn_quote: "Demander un Devis",
+                hero_badge: "Fondé en 2004 • Malacca, Malaisie",
+                hero_title_1: "CONÇU POUR",
+                hero_title_2: "LA PRÉCISION EUROPÉENNE",
+                hero_desc: "VCET Asia est votre SOLUTION TOUT-EN-UN pour les pièces mécaniques de haute précision. Nous combinons la qualité de l'ingénierie suisse à l'échelle de production de l'Asie du Sud-Est.",
+                ticker_machines: "Capacité des Machines",
+                ticker_medtech: "Focus MedTech",
+                ticker_swiss: "Exportation Suisse",
+                ticker_partners: "Installations Partenaires",
+                btn_capacities: "Voir les Capacités",
+                btn_history_link: "Notre Histoire",
+                scale_subtitle: "Échelle Opérationnelle",
+                scale_title: "Portée Mondiale et Secteurs",
+                view_mode_deck: "Passer à la présentation",
+                view_mode_web: "Passer au prototype web",
+                stat_eu: "Exportation Europe",
+                stat_ch: "Exportation Suisse",
+                hq_label: "Siège social de Malacca",
+                iso_label: "Audit ISO vérifié",
+                about_subtitle: "À propos de VCET Asia",
+                about_title: "Votre solution unique pour les composants mécaniques",
+                about_desc: "Fondée en 2004, VCET Asia relie l'expertise suisse en matière d'ingénierie aux écosystèmes de fabrication de haute capacité en Malaisie.",
+                about_card1_title: "Usinage de haute précision",
+                about_card1_desc: "Fabrication de pièces mécaniques de haute précision (prototypes, pièces uniques, production de masse).",
+                about_card2_title: "Assurance Qualité Suisse",
+                about_card2_desc: "Laboratoires QA/QC internes équipés de machines de mesure tridimensionnelles (MMT).",
+                about_card3_title: "Capacité du réseau",
+                about_card3_desc: "Plus de 20 usines partenaires auditées offrant un accès à plus de 600 machines CNC.",
+                history_title: "Notre Histoire",
+                history_subtitle: "Deux décennies de croissance.",
+                facility_infra: "Infrastructures",
+                facility_1: "Bureaux de réception modernes",
+                facility_2: "Salles de conférence dédiées",
+                facility_3: "Salles spécialisées de QC",
+                facility_4: "Zone logistique optimisée",
+                facility_subtitle: "Nos installations",
+                facility_title: "À l'intérieur du siège de VCET Asia",
+                facility_desc: "Faites une visite visuelle de notre siège moderne à Malacca.",
+                history_p1: "Création de l'entreprise et premier bureau VCET Asia.",
+                history_p2: "Mise en place de l'équipe Projet, QA/QC. Premier système ERP.",
+                history_p3: "Mise à niveau du système ERP vers une infrastructure cloud.",
+                history_p4: "Déménagement dans le nouveau bâtiment et expansion QA.",
+                workflow_title: "Flux de travail en 8 étapes",
+                workflow_subtitle: "Processus entièrement intégrés gérés par notre système ERP.",
+                step1_title: "Demande client",
+                step1_desc: "Traitement initial de la demande de proposition.",
+                step2_title: "Chefs de projet",
+                step2_desc: "Analyse de dessins 2D/3D et sélection des partenaires.",
+                step3_title: "Offre client",
+                step3_desc: "Évaluation complète des prix et soumission.",
+                step4_title: "Planification",
+                step4_desc: "Préparation de la documentation et suivi de production.",
+                step5_title: "Contrôle d'entrée",
+                step5_desc: "Réception des marchandises et mises à jour des stocks.",
+                step6_title: "Inspection",
+                step6_desc: "Contrôles QC internes.",
+                step7_title: "Exécution",
+                step7_desc: "Conception de gabarits et tests de fonctionnalité.",
+                step8_title: "Expédition",
+                step8_desc: "Emballage approprié et certifié EPTA.",
+                fac_card1_tag: "Réception",
+                fac_card1_title: "Zone de réception",
+                fac_card1_desc: "Entrée client accueillante.",
+                fac_card2_tag: "Réunions",
+                fac_card2_title: "Salle de conférence",
+                fac_card2_desc: "Pour les revues de projets.",
+                fac_card3_tag: "Espace de travail",
+                fac_card3_title: "Bureaux de projets",
+                fac_card3_desc: "Espace collaboratif.",
+                fac_card4_tag: "Contrôle de la qualité",
+                fac_card4_title: "Bureau QC",
+                fac_card4_desc: "Espace dédié à la planification des inspections.",
+                fac_card5_tag: "Inspection & CMM",
+                fac_card5_title: "Labo QC",
+                fac_card5_desc: "Machines de mesure 3D.",
+                fac_card6_tag: "Assemblage",
+                fac_card6_title: "Établis d'assemblage",
+                fac_card6_desc: "Établis spécialisés.",
+                fac_card7_tag: "Assurance Qualité",
+                fac_card7_title: "Labo de mesure 3D",
+                fac_card7_desc: "Contrôles de qualité stricts.",
+                fac_card8_tag: "Inspection Visuelle",
+                fac_card8_title: "Suite d'inspection VMM",
+                fac_card8_desc: "Systèmes de mesure optique.",
+                fac_card9_tag: "Emballage & Expédition",
+                fac_card9_title: "Zone de stockage",
+                fac_card9_desc: "Rayonnages organisés.",
+                cap_subtitle: "Infrastructure de Fabrication",
+                cap_title: "Capacités des Machines",
+                cap_desc: "Réseau de plus de 20 partenaires et 600 machines.",
+                filter_all: "Toutes les catégories",
+                filter_milling: "Fraisage CNC",
+                filter_grinding: "Rectification CNC",
+                filter_turning: "Tournage CNC",
+                filter_wirecut: "Découpe fil",
+                filter_edm: "Électroérosion",
+                milling_name: "Fraisage CNC 3, 4 et 5 axes",
+                milling_desc: "Centres de fraisage verticaux et horizontaux à grande vitesse.",
+                grinding_name: "Systèmes de rectification CNC",
+                grinding_desc: "Rectification cylindrique 7 axes, plane et profil.",
+                turning_name: "Tournage CNC et Tours Suisses",
+                turning_desc: "Centres de tournage multi-axes (4 axes, 5+1 axes, 7 axes).",
+                wirecut_name: "Électroérosion à fil",
+                wirecut_desc: "Électroérosion à fil de haute précision.",
+                edm_name: "Usinage par enfonçage (EDM)",
+                edm_desc: "Machines d'électroérosion par enfonçage.",
+                machines_unit: "Machines",
+                mat_subtitle: "Expertise Technique",
+                mat_title: "Matières premières et Traitements",
+                mat_desc: "Maîtrise du répertoire complet des matières premières et traitements.",
+                mat_box_title: "Répertoire des matières premières",
+                treat_box_title: "Traitements de surface",
+                rev_subtitle: "Répartition des revenus",
+                rev_title: "Secteurs Desservis",
+                rev_desc: "Secteurs MedTech et de l'horlogerie de luxe.",
+                global_subtitle: "Portée Mondiale",
+                global_title: "Empreinte sur le marché",
+                global_desc: "99% de nos composants sont exportés vers l'Europe.",
+                logistics_title: "Logistique Certifiée EPTA",
+                logistics_desc: "Itinéraires de fret aérien optimisés.",
+                corp_title: "Structure d'entreprise",
+                corp_subtitle: "Engagé envers la durabilité.",
+                dir_title: "Direction",
+                exec_ceocfo: "PDG / Directeur financier",
+                exec_coocto: "COO / CTO",
+                exec_gm: "Directeur Général",
+                exec_team: "Équipe de direction",
+                uni_partners_title: "Partenariats universitaires",
+                demog_title: "Démographie de la main-d'œuvre",
+                men_label: "Hommes",
+                women_label: "Femmes",
+                esg_title: "Pourquoi VCET ? (ESG et Valeur)",
+                esg_sus_title: "Durabilité",
+                esg_sus_desc: "Mesure de l'empreinte carbone.",
+                esg_com_title: "Communauté",
+                esg_com_desc: "Engagement actif dans des projets caritatifs.",
+                esg_qua_title: "Qualité",
+                esg_qua_desc: "Audits certifiés ISO.",
+                esg_cost_title: "Rentabilité",
+                esg_cost_desc: "Prix hautement compétitifs.",
+                footer_desc: "VOTRE SOLUTION UNIQUE. Relier l'ingénierie suisse de précision aux capacités de fabrication malaisiennes.",
+                footer_hq: "Siège social",
+                footer_lines: "Lignes directes",
+                footer_copyright: "© 2004 - 2026 VCET ASIA SDN BHD. Tous droits réservés.",
+                modal_support: "Support technique direct",
+                modal_title: "Soumettre une demande de devis",
+                modal_desc: "Nos ingénieurs analyseront vos plans dans les 24 heures.",
+                modal_comp: "Nom de l'entreprise *",
+                modal_email: "Email de contact *",
+                modal_sector: "Secteur cible",
+                modal_material: "Matière(s) première(s)",
+                modal_select_mat: "Ajouter une matière...",
+                modal_choose_file: "Choisir des fichiers",
+                modal_file: "Télécharger les plans CAD (fichiers 2D/3D)",
+                modal_details: "Détails du projet / Tolérances",
+                modal_placeholder: "Spécifiez les quantités, les finitions...",
+                modal_nda: "NDA strict et confidentialité garantie",
+                modal_submit: "Envoyer l'équipe d'ingénierie"
+            },
+            ta: {
+                top_excellence: "20 ஆண்டு கால சிறப்பைக் கொண்டாடுகிறோம் (2004 - 2024)",
+                top_swiss: "மலேசியாவில் உற்பத்தி செய்யப்படும் சுவிஸ் தரம்",
+                nav_about: "எங்களை பற்றி",
+                nav_history: "வரலாறு",
+                nav_facility: "வசதிகள்",
+                nav_workflow: "வேலைப்பாய்வு",
+                nav_machines: "இயந்திரங்கள்",
+                nav_materials: "பொருட்கள் & தொழில்நுட்பம்",
+                nav_corporate: "கார்ப்பரேட் & ESG",
+                btn_quote: "விலைப்புள்ளி கோருதல்",
+                hero_badge: "துவக்கம் 2004 • மலாக்கா, மலேசியா",
+                hero_title_1: "வடிவமைக்கப்பட்டது",
+                hero_title_2: "ஐரோப்பிய துல்லியத்திற்காக",
+                hero_desc: "உயர் துல்லியமான இயந்திர பாகங்கள், முன்மாதிரிகள் மற்றும் தொடர் கூட்டமைப்புகளுக்கான ஒரு நிறுத்த தீர்வு VCET Asia. தென்கிழக்கு ஆசியாவின் உற்பத்தி அளவோடு சுவிஸ் பொறியியல் தரத்தை இணைக்கிறோம்.",
+                ticker_machines: "இயந்திர திறன்",
+                ticker_medtech: "மெட்டெக் கவனம்",
+                ticker_swiss: "சுவிஸ் ஏற்றுமதி",
+                ticker_partners: "கூட்டாளர் வசதிகள்",
+                btn_capacities: "திறன்களை காண்க",
+                btn_history_link: "எங்கள் வரலாறு",
+                scale_subtitle: "செயல்பாட்டு அளவு",
+                scale_title: "உலகளாவிய ரீச் & துறைகள்",
+                view_mode_deck: "விளக்கக்காட்சி டெக்கிற்கு மாறுக",
+                view_mode_web: "இணைய முன்மாதிரிக்கு மாறுக",
+                stat_eu: "ஐரோப்பா ஏற்றுமதி",
+                stat_ch: "சுவிஸ் ஏற்றுமதி",
+                hq_label: "மலாக்கா தலைமையகம்",
+                iso_label: "ஐஎஸ்ஓ தணிக்கை",
+                about_subtitle: "VCET ஆசியா பற்றி",
+                about_title: "இயந்திர கூறுகளுக்கான உங்கள் ஒரு நிறுத்த தீர்வு",
+                about_desc: "2004 இல் நிறுவப்பட்டது, VCET ஆசியா சுவிஸ் பொறியியல் நிபுணத்துவத்தை மலேசியாவின் உற்பத்தி சுற்றுச்சூழல் அமைப்புகளுடன் இணைக்கிறது.",
+                about_card1_title: "உயர் துல்லிய இயந்திரம்",
+                about_card1_desc: "மைக்ரான்-நிலை துல்லியத்துடன் உற்பத்தி.",
+                about_card2_title: "சுவிஸ் தர உத்தரவாதம்",
+                about_card2_desc: "ஐரோப்பிய அளவுகோல்களை பூர்த்தி செய்ய MMV மற்றும் 3D ஒருங்கிணைப்பு அளவீட்டு இயந்திரங்கள்.",
+                about_card3_title: "நெட்வொர்க் திறன்",
+                about_card3_desc: "600+ CNC மற்றும் கிரைண்டிங் இயந்திரங்களுக்கான அணுகல்.",
+                history_title: "எங்கள் வரலாறு",
+                history_subtitle: "தொடர்ச்சியான வளர்ச்சி மற்றும் தொழில்நுட்ப முன்னேற்றம்.",
+                facility_infra: "வசதி உள்கட்டமைப்பு",
+                facility_1: "நவீன வரவேற்பு அலுவலகங்கள்",
+                facility_2: "அர்ப்பணிக்கப்பட்ட மாநாட்டு அறைகள்",
+                facility_3: "சிறப்பு QC அறைகள்",
+                facility_4: "உகந்த தளவாடங்கள் மண்டலம்",
+                facility_subtitle: "எங்கள் வசதிகள்",
+                facility_title: "VCET ஆசியா தலைமையகத்தின் உள்ளே",
+                facility_desc: "எங்கள் நவீன மலாக்கா தலைமையகத்தின் காட்சி சுற்றுப்பயணத்தை மேற்கொள்ளுங்கள்.",
+                history_p1: "முதல் VCET ஆசியா அலுவலகம் நிறுவுதல்.",
+                history_p2: "திட்ட மேலாண்மை குழு அமைப்பு. முதல் ERP அமைப்பு.",
+                history_p3: "ERP அமைப்பு மேம்படுத்தல்.",
+                history_p4: "புதிய கட்டிடத்திற்கு இடமாற்றம்.",
+                workflow_title: "8-படி செயல்பாட்டு பணிப்பாய்வு",
+                workflow_subtitle: "எங்கள் கிளவுட் ERP அமைப்பால் நிர்வகிக்கப்படும் முழுமையாக ஒருங்கிணைக்கப்பட்ட செயல்முறைகள்.",
+                step1_title: "வாடிக்கையாளர் கோரிக்கை",
+                step1_desc: "முன்மொழிவுக்கான கோரிக்கையின் ஆரம்ப செயலாக்கம்.",
+                step2_title: "திட்ட மேலாளர்கள்",
+                step2_desc: "2D/3D வரைதல் பகுப்பாய்வு மற்றும் உற்பத்தி மேம்படுத்தல்.",
+                step3_title: "வாடிக்கையாளர் சலுகை",
+                step3_desc: "முழுமையான விலை மதிப்பீடு மற்றும் சமர்ப்பிப்பு.",
+                step4_title: "திட்டமிடல்",
+                step4_desc: "ஆவணங்கள் தயாரித்தல் மற்றும் உற்பத்தி கண்காணிப்பு.",
+                step5_title: "நுழைவு கட்டுப்பாடு",
+                step5_desc: "சரக்கு ரசீது மற்றும் சரக்கு புதுப்பிப்புகள்.",
+                step6_title: "ஆய்வு",
+                step6_desc: "உள் QC காசோலைகள்.",
+                step7_title: "மரணதண்டனை",
+                step7_desc: "கூடியிருப்பு செயல்பாடுகள் மற்றும் இறுதி சோதனை.",
+                step8_title: "கப்பல் போக்குவரத்து",
+                step8_desc: "பொருட்களைப் பாதுகாப்பதற்கான சரியான பேக்கேஜிங்.",
+                fac_card1_tag: "வரவேற்பு",
+                fac_card1_title: "நவீன வரவேற்பு பகுதி",
+                fac_card1_desc: "வாடிக்கையாளர் நுழைவாயில்.",
+                fac_card2_tag: "மாநாடு",
+                fac_card2_title: "நிர்வாக மாநாட்டு அறை",
+                fac_card2_desc: "திட்டமிடல் மற்றும் பொறியியல் ஒத்துழைப்புகளுக்கு.",
+                fac_card3_tag: "பணியிடம்",
+                fac_card3_title: "திட்ட அலுவலக தொகுப்பு",
+                fac_card3_desc: "கூட்டுப் பணியிடம்.",
+                fac_card4_tag: "தரக் கட்டுப்பாடு",
+                fac_card4_title: "QC அலுவலகம்",
+                fac_card4_desc: "ஆய்வு திட்டமிடலுக்கான அர்ப்பணிக்கப்பட்ட அலுவலக இடம்.",
+                fac_card5_tag: "ஆய்வு & CMM",
+                fac_card5_title: "QC & CMM ஆய்வகம்",
+                fac_card5_desc: "உயர் துல்லியமான 3D அளவீட்டு இயந்திரங்கள்.",
+                fac_card6_tag: "சட்டசபை",
+                fac_card6_title: "சட்டசபை & சோதனைகள்",
+                fac_card6_desc: "சிறப்பு பணிப்பெட்டிகள்.",
+                fac_card7_tag: "தர உறுதி",
+                fac_card7_title: "CMM 3D அளவீட்டு ஆய்வகம்",
+                fac_card7_desc: "கடுமையான சுவிஸ் தர சோதனைகள்.",
+                fac_card8_tag: "ஆய்வு & பார்வை",
+                fac_card8_title: "CNC VMM ஆய்வு",
+                fac_card8_desc: "மேம்பட்ட அளவீட்டு அமைப்புகள்.",
+                fac_card9_tag: "பேக்கேஜிங் & அனுப்பல்",
+                fac_card9_title: "சேமிப்பக மண்டலம்",
+                fac_card9_desc: "உலகளாவிய அனுப்புதலுக்கான பாதுகாப்பான அட்டவணைகள்.",
+                cap_subtitle: "உற்பத்தி உள்கட்டமைப்பு",
+                cap_title: "மேம்பட்ட இயந்திர திறன்கள்",
+                cap_desc: "600 க்கும் மேற்பட்ட இயந்திரங்களுக்கான அணுகல்.",
+                filter_all: "அனைத்து வகைகள்",
+                filter_milling: "CNC அரைத்தல்",
+                filter_grinding: "CNC அரைத்தல் (Grinding)",
+                filter_turning: "CNC திருப்புதல்",
+                filter_wirecut: "வயர் கட்",
+                filter_edm: "EDM மெஷினிங்",
+                milling_name: "3-அச்சு, 4-அச்சு & 5-அச்சு CNC மில்லிங்",
+                milling_desc: "அதிவேக செங்குத்து மற்றும் கிடைமட்ட மில்லிங் மையங்கள்.",
+                grinding_name: "CNC கிரைண்டிங் அமைப்புகள்",
+                grinding_desc: "உருளை 7-அச்சு, மேற்பரப்பு மற்றும் சுயவிவர கிரைண்டிங்.",
+                turning_name: "CNC டர்னிங் & சுவிஸ் லேத்ஸ்",
+                turning_desc: "மல்டி-ஆக்சிஸ் டர்னிங் சென்டர்கள் (4-ஆக்சிஸ், 5+1 ஆக்சிஸ், 7-ஆக்சிஸ்).",
+                wirecut_name: "வயர் கட் எலக்ட்ரோ-எரோஷன்",
+                wirecut_desc: "உயர் துல்லிய வயர் கட் EDM மற்றும் சூப்பர் ட்ரில்.",
+                edm_name: "சிங்க் EDM மெஷினிங்",
+                edm_desc: "குழி வேலைகளுக்கான டை-சிங்கிங் இயந்திரங்கள்.",
+                machines_unit: "இயந்திரங்கள்",
+                mat_subtitle: "தொழில்நுட்ப நிபுணத்துவம்",
+                mat_title: "மூலப்பொருட்கள் & சிகிச்சைகள்",
+                mat_desc: "சிறப்பு முடித்தல் சிகிச்சைகளுக்கான முழுமையான கோப்பகத்தை மாஸ்டர் செய்தல்.",
+                mat_box_title: "மூலப்பொருட்கள்",
+                treat_box_title: "மேற்பரப்பு சிகிச்சைகள் & பூச்சுகள்",
+                rev_subtitle: "வருவாய் முறிவு",
+                rev_title: "சேவை செய்யப்பட்ட துறைகள்",
+                rev_desc: "மெட்டெக் மற்றும் சொகுசு துறைகளால் இயக்கப்படுகிறது.",
+                global_subtitle: "உலகளாவிய ரீச்",
+                global_title: "சர்வதேச சந்தை தடம்",
+                global_desc: "99% கூறுகள் ஐரோப்பாவிற்கு ஏற்றுமதி செய்யப்படுகின்றன.",
+                logistics_title: "EPTA சான்றளிக்கப்பட்ட தளவாடங்கள்",
+                logistics_desc: "உகந்த விமான சரக்கு பாதைகள்.",
+                corp_title: "கார்ப்பரேட் அமைப்பு மற்றும் நெறிமுறைகள்",
+                corp_subtitle: "நிலைத்தன்மை மற்றும் சமூகத்திற்கான அர்ப்பணிப்பு.",
+                dir_title: "திசை",
+                exec_ceocfo: "CEO / CFO",
+                exec_coocto: "COO / CTO",
+                exec_gm: "பொது மேலாளர்",
+                exec_team: "மேலாண்மை குழு",
+                uni_partners_title: "பல்கலைக்கழக கூட்டாண்மைகள்",
+                demog_title: "பணியாளர் புள்ளிவிவரங்கள்",
+                men_label: "ஆண்",
+                women_label: "பெண்",
+                esg_title: "ஏன் VCET? (ESG & மதிப்பு)",
+                esg_sus_title: "நிலைத்தன்மை",
+                esg_sus_desc: "கார்பன் தடம் அளவீடு மற்றும் சுற்றுச்சூழல் பேக்கேஜிங்.",
+                esg_com_title: "சமூகம்",
+                esg_com_desc: "தொண்டு திட்டங்களில் ஈடுபாடு.",
+                esg_qua_title: "தரம்",
+                esg_qua_desc: "ISO சான்றளிக்கப்பட்ட தணிக்கைகள்.",
+                esg_cost_title: "செலவு-திறன்",
+                esg_cost_desc: "அதிக போட்டி விலை.",
+                footer_desc: "உங்கள் ஒரு நிறுத்த தீர்வு. மலேசிய உற்பத்தி திறன்களுடன் சுவிஸ் துல்லியத்தை இணைக்கிறது.",
+                footer_hq: "தலைமையகம்",
+                footer_lines: "நேரடி கோடுகள்",
+                footer_copyright: "© 2004 - 2026 VCET ASIA SDN BHD. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
+                modal_support: "நேரடி தொழில்நுட்ப ஆதரவு",
+                modal_title: "விலைப்புள்ளி கோரிக்கையை சமர்ப்பிக்கவும்",
+                modal_desc: "எங்கள் பொறியாளர்கள் 24 மணி நேரத்திற்குள் உங்கள் வரைபடங்களை பகுப்பாய்வு செய்வார்கள்.",
+                modal_comp: "நிறுவனத்தின் பெயர் *",
+                modal_email: "தொடர்பு மின்னஞ்சல் *",
+                modal_sector: "இலக்கு துறை",
+                modal_material: "முதன்மை பொருள்(கள்)",
+                modal_select_mat: "மூலப்பொருளைச் சேர்...",
+                modal_choose_file: "கோப்புகளைத் தேர்ந்தெடுக்கவும்",
+                modal_file: "CAD வரைபடங்களைப் பதிவேற்றவும் (2D/3D கோப்புகள்)",
+                modal_details: "திட்ட விவரங்கள் / சகிப்புத்தன்மை",
+                modal_placeholder: "அளவுகள், முடித்தல்கள் அல்லது காலக்கெடுவைக் குறிப்பிடவும்...",
+                modal_nda: "கடுமையான NDA & சுவிஸ் தனியுரிமை",
+                modal_submit: "RFQ ஐ பொறியியல் குழுவிற்கு அனுப்பவும்"
+            }
+        };
+
+        let currentLang = 'en';
+        let selectedFilesData = new DataTransfer();
+        let selectedMaterialsList = [];
+
+        function toggleLangDropdown(event) {
+            event.stopPropagation();
+            const menu = document.getElementById('langMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        window.addEventListener('click', () => {
+            const menu = document.getElementById('langMenu');
+            if (menu && !menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+            }
+        });
+
+        function changeLanguage(langCode) {
+            currentLang = langCode;
+            const selectedLangNames = {
+                en: 'English',
+                de: 'Deutsch (DE)',
+                fr: 'Français (FR)',
+                zh: 'Mandarin (中文)',
+                ms: 'Bahasa Melayu',
+                ta: 'Tamil (தமிழ்)'
+            };
+            
+            document.getElementById('currentLang').innerText = selectedLangNames[langCode];
+            
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[langCode] && translations[langCode][key]) {
+                    el.innerText = translations[langCode][key];
+                }
+            });
+
+            const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
+            placeholders.forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (translations[langCode] && translations[langCode][key]) {
+                    el.placeholder = translations[langCode][key];
+                }
+            });
+
+            document.getElementById('langMenu').classList.add('hidden');
+            renderFleet('all');
+        }
+
+        function getFleetData() {
+            const t = translations[currentLang] || translations['en'];
+            return [
+                { cat: 'milling', name: t.milling_name, count: 222, icon: 'fa-cube', text: t.milling_desc },
+                { cat: 'grinding', name: t.grinding_name, count: 161, icon: 'fa-circle-notch', text: t.grinding_desc },
+                { cat: 'turning', name: t.turning_name, count: 126, icon: 'fa-rotate', text: t.turning_desc },
+                { cat: 'wirecut', name: t.wirecut_name, count: 60, icon: 'fa-bolt', text: t.wirecut_desc },
+                { cat: 'edm', name: t.edm_name, count: 55, icon: 'fa-cubes-stacked', text: t.edm_desc }
+            ];
+        }
+
+        let currentSlide = 1;
+        const totalSlides = 7;
+        let isPresentationMode = false;
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderFleet('all');
+            initCharts();
+        });
+
+        function toggleViewMode() {
+            isPresentationMode = !isPresentationMode;
+            const webView = document.getElementById('websiteView');
+            const presView = document.getElementById('presentationView');
+            const modeLabel = document.getElementById('viewModeLabel');
+            const t = translations[currentLang] || translations['en'];
+
+            if (isPresentationMode) {
+                webView.classList.add('hidden');
+                presView.classList.remove('hidden');
+                modeLabel.innerText = t.view_mode_web;
+                modeLabel.setAttribute('data-i18n', 'view_mode_web');
+            } else {
+                presView.classList.add('hidden');
+                webView.classList.remove('hidden');
+                modeLabel.innerText = t.view_mode_deck;
+                modeLabel.setAttribute('data-i18n', 'view_mode_deck');
+            }
+        }
+
+        function renderFleet(filter) {
+            const container = document.getElementById('fleetContainer');
+            container.innerHTML = '';
+
+            const fleetData = getFleetData();
+            const filtered = filter === 'all' ? fleetData : fleetData.filter(d => d.cat === filter);
+            const t = translations[currentLang] || translations['en'];
+
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-slate-800/90 p-6 rounded-xl border border-slate-700/80 hover:border-vcet-light transition-all-smooth shadow-lg hover:-translate-y-1";
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-vcet-light/20 text-vcet-light flex items-center justify-center text-lg">
+                            <i class="fa-solid ${item.icon}"></i>
+                        </div>
+                        <span class="px-2.5 py-1 bg-vcet-light text-white text-xs font-bold rounded-full">${item.count} ${t.machines_unit}</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">${item.name}</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">${item.text}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function filterFleet(category) {
+            document.querySelectorAll('.fleet-btn').forEach(btn => {
+                btn.className = "fleet-btn px-4 py-2 rounded-lg text-sm font-medium bg-blue-900/50 text-blue-200 hover:bg-blue-800 transition-all-smooth";
+            });
+            if (event) {
+                event.target.className = "fleet-btn px-4 py-2 rounded-lg text-sm font-medium bg-vcet-light text-white transition-all-smooth";
+            }
+            renderFleet(category);
+        }
+
+        function initCharts() {
+            const ctx = document.getElementById('sectorChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['MedTech', 'Watch Industry', 'Automation', 'Automotive', 'Electronic/Connector', 'Aerospace'],
+                    datasets: [{
+                        data: [38.0, 31.0, 13.0, 12.0, 4.0, 2.0],
+                        backgroundColor: [
+                            '#0085CA',
+                            '#002B5E',
+                            '#3B82F6',
+                            '#F59E0B',
+                            '#10B981',
+                            '#6366F1'
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#FFFFFF'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` ${context.label}: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '65%'
+                }
+            });
+        }
+
+        function updateSlideUI() {
+            for (let i = 1; i <= totalSlides; i++) {
+                const slide = document.getElementById(`slide${i}`);
+                if (slide) slide.classList.add('hidden');
+            }
+            document.getElementById(`slide${currentSlide}`).classList.remove('hidden');
+            document.getElementById('slideIndicator').innerText = `Slide ${currentSlide} of ${totalSlides}`;
+
+            const dots = document.querySelectorAll('.slide-dot');
+            dots.forEach((dot, index) => {
+                dot.className = index + 1 === currentSlide ? 
+                    "slide-dot w-2.5 h-2.5 rounded-full bg-vcet-light cursor-pointer transition-all-smooth" : 
+                    "slide-dot w-2.5 h-2.5 rounded-full bg-slate-700 cursor-pointer transition-all-smooth";
+            });
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 1) currentSlide = 1;
+            if (currentSlide > totalSlides) currentSlide = totalSlides;
+            updateSlideUI();
+        }
+
+        function goToSlide(slideNum) {
+            currentSlide = slideNum;
+            updateSlideUI();
+        }
+
+        function openRFQModal() {
+            document.getElementById('rfqModal').classList.remove('hidden');
+            document.getElementById('rfqModal').classList.add('flex');
+        }
+
+        function closeRFQModal() {
+            document.getElementById('rfqModal').classList.add('hidden');
+            document.getElementById('rfqModal').classList.remove('flex');
+        }
+
+        // Material Multi-Select and Delete Functions
+        function addSelectedMaterial(event) {
+            const select = event.target;
+            const val = select.value;
+            if (val && !selectedMaterialsList.includes(val)) {
+                selectedMaterialsList.push(val);
+                updateMaterialsUI();
+            }
+            select.value = ""; // Reset dropdown back to default prompt
+        }
+
+        function removeMaterial(index) {
+            selectedMaterialsList.splice(index, 1);
+            updateMaterialsUI();
+        }
+
+        function updateMaterialsUI() {
+            const container = document.getElementById('selectedMaterialsContainer');
+            container.innerHTML = '';
+            
+            selectedMaterialsList.forEach((mat, index) => {
+                const tag = document.createElement('span');
+                tag.className = "inline-flex items-center bg-vcet-light/10 border border-vcet-light/30 text-vcet-dark text-xs font-semibold px-2.5 py-1 rounded-full";
+                tag.innerHTML = `
+                    <i class="fa-solid fa-cube text-vcet-light mr-1.5 text-[10px]"></i>${mat}
+                    <button type="button" onclick="removeMaterial(${index})" class="ml-2 text-slate-400 hover:text-red-600 font-bold px-1 transition-all-smooth" title="Remove material">&times;</button>
+                `;
+                container.appendChild(tag);
+            });
+        }
+
+        // File Selection & Deletion Handler Functions
+        function handleFileSelect(event) {
+            const input = event.target;
+            for (let i = 0; i < input.files.length; i++) {
+                selectedFilesData.items.add(input.files[i]);
+            }
+            updateFileListUI();
+        }
+
+        function removeFile(index) {
+            const dt = new DataTransfer();
+            const { files } = selectedFilesData;
+            for (let i = 0; i < files.length; i++) {
+                if (i !== index) {
+                    dt.items.add(files[i]);
+                }
+            }
+            selectedFilesData = dt;
+            updateFileListUI();
+        }
+
+        function updateFileListUI() {
+            const listContainer = document.getElementById('selectedFilesList');
+            const countLabel = document.getElementById('fileCountLabel');
+            const fileInput = document.getElementById('rfqFileInput');
+            listContainer.innerHTML = '';
+            
+            const files = selectedFilesData.files;
+            if (files.length === 0) {
+                countLabel.innerText = 'No file chosen';
+                fileInput.value = '';
+                return;
+            }
+
+            countLabel.innerText = `${files.length} file(s) selected`;
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const item = document.createElement('div');
+                item.className = "flex items-center justify-between bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200 text-xs text-slate-700";
+                item.innerHTML = `
+                    <span class="truncate max-w-[320px]"><i class="fa-solid fa-file-arrow-up text-vcet-light mr-1.5"></i>${file.name}</span>
+                    <button type="button" onclick="removeFile(${i})" class="text-red-500 hover:text-red-700 font-bold ml-2 px-1.5 py-0.5 rounded hover:bg-red-50 transition-all-smooth" title="Remove file">&times;</button>
+                `;
+                listContainer.appendChild(item);
+            }
+            fileInput.files = selectedFilesData.files;
+        }
+
+        function handleRFQSubmit(event) {
+            event.preventDefault();
+            const fileCount = selectedFilesData.files.length;
+            const matCount = selectedMaterialsList.length;
+            closeRFQModal();
+            
+            // Reset files and materials after submit
+            selectedFilesData = new DataTransfer();
+            selectedMaterialsList = [];
+            updateFileListUI();
+            updateMaterialsUI();
+            event.target.reset();
+
+            const notification = document.createElement('div');
+            notification.className = "fixed bottom-5 right-5 bg-vcet-light text-white px-6 py-4 rounded-xl shadow-2xl z-50 flex items-center space-x-3 transition-all-smooth";
+            notification.innerHTML = `<i class="fa-solid fa-circle-check text-xl"></i><div><h4 class="font-bold">RFQ Submitted Successfully</h4><p class="text-xs">Thank you! VCET Asia engineering team received your request (${matCount} material(s), ${fileCount} file(s)) and will respond within 24 hours.</p></div>`;
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 4000);
+        }
+    </script>
+</body>
+</html>
